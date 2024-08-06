@@ -251,7 +251,9 @@ onBeforeUnmount(() => {
                 <div class="col-12 px-4 py-2">
                   <div class="row">
                     <div class="position-relative">
-                      <RouterLink :to="{ name: 'digital-implant' }" class="dropdown-item border-radius-md">
+                      <RouterLink :to="{ name: 'digital-implant'}" class="dropdown-item border-radius-md">
+                      <!-- <RouterLink :to="{ name: 'digital-implant', hash:'#scroll-focus'}" class="dropdown-item border-radius-md"> -->
+                      <!-- <RouterLink to="/pages/landing-pages/digital-implant#scroll-focus" class="dropdown-item border-radius-md"> -->
                         <span>디지털 네비게이션 임플란트</span>
                       </RouterLink>
                       <RouterLink :to="{ name: 'sinus-lift' }" class="dropdown-item border-radius-md">

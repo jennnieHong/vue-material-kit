@@ -1,4 +1,5 @@
 <script setup>
+import { RouterLink } from "vue-router";
 import logoDark from "@/assets/img/logo-ct-dark.png";
 defineProps({
   brand: {
@@ -7,7 +8,7 @@ defineProps({
     logo: String,
     route: "",
     default: () => ({
-      name: "서울온정치과",
+      name: "서울온정치과의원",
       logo: logoDark,
       route: "/"
     })
@@ -79,7 +80,7 @@ defineProps({
             href: "https://www.creative-tim.com/affiliates/new"
           }
         ]
-      },
+      },  
       {
         name: "help & support",
         items: [
@@ -153,6 +154,43 @@ defineProps({
           </ul>
         </div>
 
+        <div class="col-12">
+          <div class="text-left">
+            <p class="text-dark my-4 text-sm font-weight-normal">
+              <RouterLink class="navbar-brand d-none-block" :to="{ name: 'terms-of-service' }" rel="tooltip" title="Designed and Coded by Creative Tim"
+                data-placement="bottom">
+                이용약관
+              </RouterLink>
+
+               | 
+              <RouterLink class="navbar-brand d-none-block" :to="{ name: 'privacy-policy' }" rel="tooltip" title="Designed and Coded by Creative Tim"
+                data-placement="bottom">
+                개인정보처리방침
+              </RouterLink>
+            </p>
+            <p class="text-dark my-4 text-sm font-weight-normal">
+              서울온정치과의원 | 경북 성주군 성주읍 성주로 3289 더갤럭시빌딩 2층 (우편번호: 40031)<br/>
+              대표자명 | 배인재<br/>
+              사업자등록번호 | 106-64-00616 <br/>
+              TEL | 배인재<br/>
+              FAX | 106-64-00616 <br/>
+              서울온정치과 블로그 | 대한통합치과학회 <br/>
+              {{ new Date().getFullYear() }}
+              Material Kit by
+              <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
+            </p>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="text-center">
+            <p class="text-dark my-4 text-sm font-weight-normal">
+              All rights reserved. Copyright ©
+              {{ new Date().getFullYear() }}
+              Material Kit by
+              <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
+            </p>
+          </div>
+        </div>
         <div class="col-12">
           <div class="text-center">
             <p class="text-dark my-4 text-sm font-weight-normal">
