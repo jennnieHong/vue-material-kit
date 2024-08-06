@@ -84,9 +84,7 @@ const highlighter = (code) => {
 </script>
 
 <template>
-  <div
-    class="position-relative border-radius-xl overflow-hidden shadow-lg mb-7"
-  >
+  <div class="position-relative border-radius-xl overflow-hidden shadow-lg mb-7">
     <div class="container border-bottom">
       <div class="row justify-space-between py-2">
         <div class="col-lg-3 me-auto">
@@ -96,24 +94,14 @@ const highlighter = (code) => {
           <div class="nav-wrapper position-relative end-0">
             <ul class="nav nav-pills nav-fill flex-row p-1" role="tablist">
               <li class="nav-item">
-                <a
-                  class="nav-link mb-0 px-0 py-1 active"
-                  data-bs-toggle="tab"
-                  :href="`#preview-${id}`"
-                  role="tab"
-                  aria-selected="true"
-                >
+                <a class="nav-link mb-0 px-0 py-1 active" data-bs-toggle="tab" :href="`#preview-${id}`" role="tab"
+                  aria-selected="true">
                   <i class="fas fa-desktop text-sm me-2"></i> Preview
                 </a>
               </li>
               <li class="nav-item">
-                <a
-                  class="nav-link mb-0 px-0 py-1"
-                  data-bs-toggle="tab"
-                  :href="`#code-${id}`"
-                  role="tab"
-                  aria-selected="false"
-                >
+                <a class="nav-link mb-0 px-0 py-1" data-bs-toggle="tab" :href="`#code-${id}`" role="tab"
+                  aria-selected="false">
                   <i class="fas fa-code text-sm me-2"></i> Code
                 </a>
               </li>
@@ -130,20 +118,11 @@ const highlighter = (code) => {
       </div>
       <div class="tab-pane" :id="`code-${id}`">
         <div class="position-relative p-4 pb-2">
-          <a
-            class="btn btn-sm bg-gradient-dark position-absolute end-4 mt-3 z-index-3"
-            @click="copy($event)"
-            href="javascript:;"
-            ><i class="fas fa-copy text-sm me-1"></i> Copy</a
-          >
+          <a class="btn btn-sm bg-gradient-dark position-absolute end-4 mt-3 z-index-3" @click="copy($event)"
+            href="javascript:;"><i class="fas fa-copy text-sm me-1"></i> Copy</a>
           <figure class="highlight">
-            <PrismEditor
-              class="p-2 bg-gray-100 border-radius-xl height-800 my-editor"
-              v-model="editorCode"
-              :highlight="highlighter"
-              line-numbers
-              readonly
-            ></PrismEditor>
+            <PrismEditor class="p-2 bg-gray-100 border-radius-xl height-800 my-editor" v-model="editorCode"
+              :highlight="highlighter" line-numbers readonly></PrismEditor>
           </figure>
         </div>
       </div>
@@ -161,6 +140,7 @@ const highlighter = (code) => {
   padding: 5px;
   tab-size: 4;
 }
+
 /* optional class for removing the outline */
 .prism-editor__textarea:focus {
   outline: none;

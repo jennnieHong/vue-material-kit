@@ -44,6 +44,16 @@
   }
 }
 
+.custom-icon {
+  font-size: 20px; /* 아이콘의 폰트 크기 설정 */
+  width: 20px; /* 컨테이너의 너비 */
+  height: 20px; /* 컨테이너의 높이 */
+  // line-height: 20px; /* 아이콘의 세로 정렬 */
+  display: inline-block; /* 크기 조절을 위해 inline-block 사용 */
+  opacity: 0.6; /* 불투명도 설정 */
+  // margin-right: 8px; /* 아이콘 간의 간격 */
+  // vertical-align: middle; /* 수직 정렬 */
+}
 //
 // Tabs
 //

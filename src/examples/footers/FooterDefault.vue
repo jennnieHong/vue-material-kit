@@ -7,7 +7,7 @@ defineProps({
     logo: String,
     route: "",
     default: () => ({
-      name: "Material Kit 2",
+      name: "서울온정치과",
       logo: logoDark,
       route: "/"
     })
@@ -135,27 +135,14 @@ defineProps({
           </div>
           <div>
             <ul class="d-flex flex-row ms-n3 nav">
-              <li
-                class="nav-item"
-                v-for="{ icon, link } of socials"
-                :key="link"
-              >
-                <a
-                  class="nav-link pe-1"
-                  :href="link"
-                  target="_blank"
-                  v-html="icon"
-                >
+              <li class="nav-item" v-for="{ icon, link } of socials" :key="link">
+                <a class="nav-link pe-1" :href="link" target="_blank" v-html="icon">
                 </a>
               </li>
             </ul>
           </div>
         </div>
-        <div
-          class="col-md-2 col-sm-6 col-6 mb-4"
-          v-for="{ name, items } of menus"
-          :key="name"
-        >
+        <div class="col-md-2 col-sm-6 col-6 mb-4" v-for="{ name, items } of menus" :key="name">
           <h6 class="text-sm">{{ name }}</h6>
           <ul class="flex-column ms-n3 nav">
             <li class="nav-item" v-for="item of items" :key="item.name">
@@ -172,9 +159,7 @@ defineProps({
               All rights reserved. Copyright ©
               {{ new Date().getFullYear() }}
               Material Kit by
-              <a href="https://www.creative-tim.com" target="_blank"
-                >Creative Tim</a
-              >.
+              <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
             </p>
           </div>
         </div>

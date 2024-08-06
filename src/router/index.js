@@ -1,8 +1,26 @@
 import { createRouter, createWebHistory } from "vue-router";
 import PresentationView from "../views/Presentation/PresentationView.vue";
+import DigitalImplantView from "../views/LandingPages/DigitalImplant/AboutView.vue";
+import SinusLiftView from "../views/LandingPages/SinusLift/AboutView.vue";
+import InsuranceView from "../views/LandingPages/Insurance/AboutView.vue";
+import ConsciousSedationView from "../views/LandingPages/ConsciousSedation/AboutView.vue";
+import CavityView from "../views/LandingPages/Cavity/AboutView.vue";
+import RootCanalView from "../views/LandingPages/RootCanal/AboutView.vue";
+import GumView from "../views/LandingPages/Gum/AboutView.vue";
+import WisdomToothView from "../views/LandingPages/WisdomTooth/AboutView.vue";
+import CrownView from "../views/LandingPages/Crown/AboutView.vue";
+import OrthodonticView from "../views/LandingPages/Orthodontic/AboutView.vue";
+import ProsthodonticView from "../views/LandingPages/Prosthodontic/AboutView.vue";
 import AboutView from "../views/LandingPages/AboutUs/AboutView.vue";
 import ContactView from "../views/LandingPages/ContactUs/ContactView.vue";
 import AuthorView from "../views/LandingPages/Author/AuthorView.vue";
+import IntroductionView from "../views/LandingPages/Introduction/AuthorView.vue";
+import UniquenessView from "../views/LandingPages/Uniqueness/AuthorView.vue";
+import ValuesView from "../views/LandingPages/Values/AuthorView.vue";
+import CurriculumViewBij from "../views/LandingPages/Curriculum/AuthorViewBij.vue";
+import CurriculumViewLjs from "../views/LandingPages/Curriculum/AuthorViewLjs.vue";
+import HoursView from "../views/LandingPages/Hours/AuthorView.vue";
+import MapView from "../views/LandingPages/Map/AuthorView.vue";
 import SignInBasicView from "../views/LandingPages/SignIn/BasicView.vue";
 import PageHeaders from "../layouts/sections/page-sections/page-headers/HeadersView.vue";
 import PageFeatures from "../layouts/sections/page-sections/features/FeaturesView.vue";
@@ -32,9 +50,64 @@ const router = createRouter({
       component: PresentationView,
     },
     {
+      path: "/pages/landing-pages/digital-implant",
+      name: "digital-implant",
+      component: DigitalImplantView,
+    },
+    {
+      path: "/pages/landing-pages/sinus-lift",
+      name: "sinus-lift",
+      component: SinusLiftView,
+    },
+    {
+      path: "/pages/landing-pages/insurance",
+      name: "insurance",
+      component: InsuranceView,
+    },
+    {
+      path: "/pages/landing-pages/conscious-sedation",
+      name: "conscious-sedation",
+      component: ConsciousSedationView,
+    },
+    {
+      path: "/pages/landing-pages/cavity",
+      name: "cavity",
+      component: CavityView,
+    },
+    {
+      path: "/pages/landing-pages/root-canal",
+      name: "root-canal",
+      component: RootCanalView,
+    },
+    {
+      path: "/pages/landing-pages/gum",
+      name: "gum",
+      component: GumView,
+    },
+    {
+      path: "/pages/landing-pages/wisdom-tooth",
+      name: "wisdom-tooth",
+      component: WisdomToothView,
+    },
+    {
+      path: "/pages/landing-pages/crown",
+      name: "crown",
+      component: CrownView,
+    },
+    {
+      path: "/pages/landing-pages/orthodontic",
+      name: "orthodontic",
+      component: OrthodonticView,
+    },
+    {
+      path: "/pages/landing-pages/prosthodontic",
+      name: "prosthodontic",
+      component: ProsthodonticView,
+    },
+    {
       path: "/pages/landing-pages/about-us",
       name: "about",
-      component: AboutView,
+      component: ProsthodonticView,
     },
     {
       path: "/pages/landing-pages/contact-us",
@@ -45,6 +118,41 @@ const router = createRouter({
       path: "/pages/landing-pages/author",
       name: "author",
       component: AuthorView,
+    },
+    {
+      path: "/pages/landing-pages/introduction",
+      name: "introduction",
+      component: IntroductionView,
+    },
+    {
+      path: "/pages/landing-pages/uniqueness",
+      name: "uniqueness",
+      component: UniquenessView,
+    },
+    {
+      path: "/pages/landing-pages/values",
+      name: "values",
+      component: ValuesView,
+    },
+    {
+      path: "/pages/landing-pages/curriculum",
+      name: "curriculumBij",
+      component: CurriculumViewBij,
+    },
+    {
+      path: "/pages/landing-pages/curriculum",
+      name: "curriculumLjs",
+      component: CurriculumViewLjs,
+    },
+    {
+      path: "/pages/landing-pages/hours",
+      name: "hours",
+      component: HoursView,
+    },
+    {
+      path: "/pages/landing-pages/map",
+      name: "map",
+      component: MapView,
     },
     {
       path: "/pages/landing-pages/basic",

@@ -4457,27 +4457,27 @@ textarea.form-control-lg {
   flex-wrap: nowrap;
   justify-content: flex-start;
 }
-.navbar-expand .navbar-nav {
+.navbar-expand > .navbar-nav {
   flex-direction: row;
 }
-.navbar-expand .navbar-nav .dropdown-menu {
+.navbar-expand > .navbar-nav > .dropdown-menu {
   position: absolute;
 }
-.navbar-expand .navbar-nav .nav-link {
+.navbar-expand > .navbar-nav .nav-link {
   padding-right: var(--bs-navbar-nav-link-padding-x);
   padding-left: var(--bs-navbar-nav-link-padding-x);
 }
-.navbar-expand .navbar-nav-scroll {
+.navbar-expand > .navbar-nav-scroll {
   overflow: visible;
 }
-.navbar-expand .navbar-collapse {
+.navbar-expand > .navbar-collapse {
   display: flex !important;
   flex-basis: auto;
 }
-.navbar-expand .navbar-toggler {
+.navbar-expand > .navbar-toggler {
   display: none;
 }
-.navbar-expand .offcanvas {
+.navbar-expand > .offcanvas {
   position: static;
   z-index: auto;
   flex-grow: 1;
@@ -4489,10 +4489,10 @@ textarea.form-control-lg {
   transform: none !important;
   transition: none;
 }
-.navbar-expand .offcanvas .offcanvas-header {
+.navbar-expand > .offcanvas > .offcanvas-header {
   display: none;
 }
-.navbar-expand .offcanvas .offcanvas-body {
+.navbar-expand >.offcanvas > .offcanvas-body {
   display: flex;
   flex-grow: 0;
   padding: 0;
@@ -7525,6 +7525,7 @@ textarea.form-control-lg {
 
 .shadow-none {
   box-shadow: none !important;
+  transition: all 1s ease; /* 모든 스타일 변경에 대해 전환 효과 적용 */
 }
 
 .position-static {
@@ -9647,10 +9648,12 @@ textarea.form-control-lg {
 
 .text-dark {
   color: #344767 !important;
+  transition: color 0.8s ease; /* 색상 변화에 대한 전환 효과 */
 }
 
 .text-white {
   color: #fff !important;
+  transition: color 0.8s ease; /* 색상 변화에 대한 전환 효과 */
 }
 
 .text-body {
@@ -17388,6 +17391,7 @@ textarea.form-control-lg {
   font-size: 1.1rem;
   display: inline-block;
   top: 0;
+  transition: all 0.3s ease; /* 모든 스타일 변경 시 0.3초 동안 전환 */
 }
 
 .btn-check:checked + .btn svg .color-background {
@@ -19350,6 +19354,10 @@ svg.text-dark .color-background {
   -webkit-backdrop-filter: saturate(200%) blur(30px);
   backdrop-filter: saturate(200%) blur(30px);
   background-color: rgba(255, 255, 255, 0.8) !important;
+  transition: all 1s ease; /* 모든 스타일 변경에 대해 전환 효과 적용 */
+}
+.transition-target {
+  transition: all 1s ease; /* .blur가 붙거나 제거될 때 적용될 전환 효과 */
 }
 .blur.saturation-less {
   -webkit-backdrop-filter: saturate(20%) blur(30px);

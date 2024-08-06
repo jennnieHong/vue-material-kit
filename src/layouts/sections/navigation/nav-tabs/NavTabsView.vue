@@ -20,10 +20,7 @@ onMounted(() => {
 });
 </script>
 <template>
-  <BaseLayout
-    title="Nav Tabs"
-    :breadcrumb="[{ label: 'Navigation', route: '#' }, { label: 'Nav Tabs' }]"
-  >
+  <BaseLayout title="Nav Tabs" :breadcrumb="[{ label: 'Navigation', route: '#' }, { label: 'Nav Tabs' }]">
     <View title="Tabs Simple" :code="TabsSimpleCode" id="tabs-simple">
       <TabsSimple />
     </View>

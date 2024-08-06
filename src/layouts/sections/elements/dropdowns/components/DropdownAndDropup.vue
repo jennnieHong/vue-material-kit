@@ -11,76 +11,41 @@ let showDropup = ref(false);
     <div class="row d-flex justify-content-center">
       <div class="col-lg-4 col-md-6 col-sm-3">
         <div class="dropdown">
-          <MaterialButton
-            variant="gradient"
-            color="success"
-            class="dropdown-toggle"
-            :class="{ show: showDropdown }"
-            @focusout="showDropdown = false"
-            id="dropdownMenuButton"
-            data-bs-toggle="dropdown"
-            :area-expanded="showDropdown"
-            @click="showDropdown = !showDropdown"
-          >
+          <MaterialButton variant="gradient" color="success" class="dropdown-toggle" :class="{ show: showDropdown }"
+            @focusout="showDropdown = false" id="dropdownMenuButton" data-bs-toggle="dropdown"
+            :area-expanded="showDropdown" @click="showDropdown = !showDropdown">
             Dropdown button
           </MaterialButton>
 
-          <ul
-            class="dropdown-menu px-2 py-3"
-            :class="{ show: showDropdown }"
-            aria-labelledby="dropdownMenuButton"
-          >
+          <ul class="dropdown-menu px-2 py-3" :class="{ show: showDropdown }" aria-labelledby="dropdownMenuButton">
             <li>
-              <a class="dropdown-item border-radius-md" href="javascript:;"
-                >Action</a
-              >
+              <a class="dropdown-item border-radius-md" href="javascript:;">Action</a>
             </li>
             <li>
-              <a class="dropdown-item border-radius-md" href="javascript:;"
-                >Another action</a
-              >
+              <a class="dropdown-item border-radius-md" href="javascript:;">Another action</a>
             </li>
             <li>
-              <a class="dropdown-item border-radius-md" href="javascript:;"
-                >Something else here</a
-              >
+              <a class="dropdown-item border-radius-md" href="javascript:;">Something else here</a>
             </li>
           </ul>
         </div>
       </div>
       <div class="col-lg-4 col-md-6 col-sm-3">
         <div class="btn-group dropup mt-7">
-          <MaterialButton
-            variant="gradient"
-            color="success"
-            class="dropdown-toggle"
-            :class="{ show: showDropup }"
-            data-bs-toggle="dropdown"
-            :area-expanded="showDropup"
-            @focusout="showDropup = false"
-            @click="showDropup = !showDropup"
-          >
+          <MaterialButton variant="gradient" color="success" class="dropdown-toggle" :class="{ show: showDropup }"
+            data-bs-toggle="dropdown" :area-expanded="showDropup" @focusout="showDropup = false"
+            @click="showDropup = !showDropup">
             Dropup
           </MaterialButton>
-          <ul
-            class="dropdown-menu px-2 py-3"
-            :class="{ show: showDropup }"
-            aria-labelledby="dropdownMenuButton"
-          >
+          <ul class="dropdown-menu px-2 py-3" :class="{ show: showDropup }" aria-labelledby="dropdownMenuButton">
             <li>
-              <a class="dropdown-item border-radius-md" href="javascript:;"
-                >Action</a
-              >
+              <a class="dropdown-item border-radius-md" href="javascript:;">Action</a>
             </li>
             <li>
-              <a class="dropdown-item border-radius-md" href="javascript:;"
-                >Another action</a
-              >
+              <a class="dropdown-item border-radius-md" href="javascript:;">Another action</a>
             </li>
             <li>
-              <a class="dropdown-item border-radius-md" href="javascript:;"
-                >Something else here</a
-              >
+              <a class="dropdown-item border-radius-md" href="javascript:;">Something else here</a>
             </li>
           </ul>
         </div>
