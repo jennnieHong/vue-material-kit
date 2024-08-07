@@ -663,110 +663,29 @@ onBeforeUnmount(() => {
               </div>
             </div>
           </li>
-          <li class="nav-item dropdown dropdown-hover mx-2">
-            <a role="button" class="nav-link ps-2 d-flex cursor-pointer align-items-center" :class="getTextColor()"
-              id="dropdownMenuDocs" data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="material-icons opacity-6 me-2 text-md" :class="getTextColor()">article</i>
-              Docs
-              <img :src="getArrowColor()" alt="down-arrow" class="arrow ms-2 d-lg-block d-none" />
-              <img :src="getArrowColor()" alt="down-arrow" class="arrow ms-1 d-lg-none d-block ms-auto" />
-            </a>
-            <div
-              class="dropdown-menu dropdown-menu-end dropdown-menu-animation dropdown-md mt-0 mt-lg-3 p-3 border-radius-lg"
-              aria-labelledby="dropdownMenuDocs">
-              <div class="d-none d-lg-block">
-                <ul class="list-group">
-                  <li class="nav-item list-group-item border-0 p-0">
-                    <a class="dropdown-item py-2 ps-3 border-radius-md"
-                      href=" https://www.creative-tim.com/learning-lab/vue/overview/material-kit/">
-                      <h6
-                        class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">
-                        Getting Started
-                      </h6>
-                      <span class="text-sm">All about overview, quick start, license and
-                        contents</span>
-                    </a>
-                  </li>
-                  <li class="nav-item list-group-item border-0 p-0">
-                    <a class="dropdown-item py-2 ps-3 border-radius-md"
-                      href=" https://www.creative-tim.com/learning-lab/vue/colors/material-kit/">
-                      <h6
-                        class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">
-                        Foundation
-                      </h6>
-                      <span class="text-sm">See our colors, icons and typography</span>
-                    </a>
-                  </li>
-                  <li class="nav-item list-group-item border-0 p-0">
-                    <a class="dropdown-item py-2 ps-3 border-radius-md"
-                      href=" https://www.creative-tim.com/learning-lab/vue/alerts/material-kit/">
-                      <h6
-                        class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">
-                        Components
-                      </h6>
-                      <span class="text-sm">Explore our collection of fully designed
-                        components</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div class="row d-lg-none">
-                <div class="col-md-12 g-0">
-                  <a class="dropdown-item py-2 ps-3 border-radius-md" href="./pages/about-us.html">
-                    <h6
-                      class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">
-                      Getting Started
-                    </h6>
-                    <span class="text-sm">All about overview, quick start, license and
-                      contents</span>
-                  </a>
-                  <a class="dropdown-item py-2 ps-3 border-radius-md" href="./pages/about-us.html">
-                    <h6
-                      class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">
-                      Foundation
-                    </h6>
-                    <span class="text-sm">See our colors, icons and typography</span>
-                  </a>
-                  <a class="dropdown-item py-2 ps-3 border-radius-md" href="./pages/about-us.html">
-                    <h6
-                      class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">
-                      Components
-                    </h6>
-                    <span class="text-sm">Explore our collection of fully designed components</span>
-                  </a>
-                  <a class="dropdown-item py-2 ps-3 border-radius-md" href="./pages/about-us.html">
-                    <h6
-                      class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">
-                      Plugins
-                    </h6>
-                    <span class="text-sm">Check how you can integrate our plugins</span>
-                  </a>
-                  <a class="dropdown-item py-2 ps-3 border-radius-md" href="./pages/about-us.html">
-                    <h6
-                      class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">
-                      Utility Classes
-                    </h6>
-                    <span class="text-sm">For those who want flexibility, use our utility
-                      classes</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </li>
 
           <li class="nav-item dropdown dropdown-hover mx-2">
             <div>
-              <div class="d-flex flex-row justify-content-between" style="width: 100%;">
+              <div class="d-flex justify-content-between" style="width: 100%;">
                 <!-- <div class="d-flex flex-row justify-content-start" style="width: 100%;"> -->
 
                 <a href="https://www.creative-tim.com/product/vue-material-kit-pro"
-                  class="btn btn-sm bg-gradient-success mb-0 d-lg-none d-block mx-1 px-5" style="flex-basis: 45%;">오시는 길
+                  class="btn btn-sm bg-gradient-success mb-0 d-lg-none d-block mx-3 " style="flex-basis: 45%;">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="15px" viewBox="0 -960 960 960" fill="#fff">
+                    <path
+                      d="M480-301q99-80 149.5-154T680-594q0-90-56-148t-144-58q-88 0-144 58t-56 148q0 65 50.5 139T480-301Zm0 101Q339-304 269.5-402T200-594q0-125 78-205.5T480-880q124 0 202 80.5T760-594q0 94-69.5 192T480-200Zm0-320q33 0 56.5-23.5T560-600q0-33-23.5-56.5T480-680q-33 0-56.5 23.5T400-600q0 33 23.5 56.5T480-520ZM200-80v-80h560v80H200Zm280-520Z" />
+                  </svg>
+                  오시는길
                 </a>
 
 
 
                 <a href="https://www.creative-tim.com/product/vue-material-kit-pro"
-                  class="btn btn-sm bg-gradient-warning mb-0 d-lg-none d-block mx-1 px-3" style="flex-basis: 45%;">전화 문의
+                  class="btn btn-sm bg-gradient-warning mb-0 d-lg-none d-block mx-3" style="flex-basis: 45%;">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" fill="#fff">
+                    <path
+                      d="M798-120q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z" />
+                  </svg>전화문의
                 </a>
               </div>
             </div>
@@ -801,13 +720,25 @@ onBeforeUnmount(() => {
         <ul class="navbar-nav d-lg-block d-none">
           <li class="nav-item ">
             <a :href="action.route" class="btn btn-sm mb-0 mx-1" :class="action.color"
-              onclick="smoothToPricing('pricing-soft-ui')">{{ action.label }}</a>
+              onclick="smoothToPricing('pricing-soft-ui')">
+
+              <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" fill="#fff">
+                <path
+                  d="M480-301q99-80 149.5-154T680-594q0-90-56-148t-144-58q-88 0-144 58t-56 148q0 65 50.5 139T480-301Zm0 101Q339-304 269.5-402T200-594q0-125 78-205.5T480-880q124 0 202 80.5T760-594q0 94-69.5 192T480-200Zm0-320q33 0 56.5-23.5T560-600q0-33-23.5-56.5T480-680q-33 0-56.5 23.5T400-600q0 33 23.5 56.5T480-520ZM200-80v-80h560v80H200Zm280-520Z" />
+              </svg>
+              {{ action.label }}</a>
           </li>
         </ul>
         <ul class="navbar-nav d-lg-block d-none">
           <li class="nav-item ">
             <a :href="action2.route" class="btn btn-sm mb-0 " :class="action2.color"
-              onclick="smoothToPricing('pricing-soft-ui')">{{ action2.label }}</a>
+              onclick="smoothToPricing('pricing-soft-ui')">
+
+              <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" fill="#fff">
+                <path
+                  d="M798-120q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z" />
+              </svg>
+              {{ action2.label }}</a>
           </li>
         </ul>
       </div>
