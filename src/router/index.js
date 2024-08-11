@@ -17,6 +17,7 @@ import AuthorView from "../views/LandingPages/Author/AuthorView.vue";
 import IntroductionView from "../views/LandingPages/Introduction/AuthorView.vue";
 import UniquenessView from "../views/LandingPages/Uniqueness/AuthorView.vue";
 import ValuesView from "../views/LandingPages/Values/AuthorView.vue";
+import CurriculumView from "../views/LandingPages/Curriculum/AuthorView.vue";
 import CurriculumViewBij from "../views/LandingPages/Curriculum/AuthorViewBij.vue";
 import CurriculumViewLjs from "../views/LandingPages/Curriculum/AuthorViewLjs.vue";
 import HoursView from "../views/LandingPages/Hours/AuthorView.vue";
@@ -133,6 +134,11 @@ const router = createRouter({
       path: "/pages/landing-pages/values",
       name: "values",
       component: ValuesView,
+    },
+    {
+      path: "/pages/landing-pages/curriculum",
+      name: "curriculum",
+      component: CurriculumView,
     },
     {
       path: "/pages/landing-pages/curriculum",
