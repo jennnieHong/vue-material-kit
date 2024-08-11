@@ -11,6 +11,8 @@ import WisdomToothView from "../views/LandingPages/WisdomTooth/AboutView.vue";
 import CrownView from "../views/LandingPages/Crown/AboutView.vue";
 import OrthodonticView from "../views/LandingPages/Orthodontic/AboutView.vue";
 import ProsthodonticView from "../views/LandingPages/Prosthodontic/AboutView.vue";
+import PrivacyPolicy from "../views/LandingPages/PrivacyPolicy/AboutView.vue";
+import TermsOfService from "../views/LandingPages/TermsOfService/AboutView.vue";
 import AboutView from "../views/LandingPages/AboutUs/AboutView.vue";
 import ContactView from "../views/LandingPages/ContactUs/ContactView.vue";
 import AuthorView from "../views/LandingPages/Author/AuthorView.vue";
@@ -104,6 +106,16 @@ const router = createRouter({
       path: "/pages/landing-pages/prosthodontic",
       name: "prosthodontic",
       component: ProsthodonticView,
+    },
+    {
+      path: "/pages/landing-pages/privacy-policy",
+      name: "privacy-policy",
+      component: PrivacyPolicy,
+    },
+    {
+      path: "/pages/landing-pages/terms-of-service",
+      name: "terms-of-service",
+      component: TermsOfService,
     },
     {
       path: "/pages/landing-pages/about-us",
@@ -261,6 +273,32 @@ const router = createRouter({
       component: ElTypography,
     },
   ],
+  // scrollBehavior 추가
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    } else {
+      if (to.hash) {
+        return {
+          el: to.hash,
+          behavior: 'smooth',
+        };
+      }
+
+      // 특정 경로에 대한 스크롤 위치 설정
+      // if (to.name === 'digital-implant') {
+      //   // 디지털 임플란트 페이지에서 특정 위치로 스크롤
+      //   return { left: 0, top: 300, behavior: 'smooth' };
+      // }
+
+      if (to.name === 'about') {
+        // About 페이지에서 특정 위치로 스크롤
+        return { left: 0, top: 200, behavior: 'smooth' };
+      }
+
+      return { left: 0, top: 0 };
+    }
+  },
 });
 
 export default router;
