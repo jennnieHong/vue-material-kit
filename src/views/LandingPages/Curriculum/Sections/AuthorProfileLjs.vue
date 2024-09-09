@@ -19,12 +19,12 @@ onMounted(() => {
     <div class="container">
       <div class="row">
         <div class="col-12 mx-auto">
-          <div class="mt-n8 mt-md-n9 text-center">
+          <!-- <div class="mt-n8 mt-md-n9 text-center">
             <div class="blur-shadow-avatar">
               <MaterialAvatar size="xxl" class="shadow-xl position-relative z-index-2" :image="profilePic"
                 alt="Avatar" />
             </div>
-          </div>
+          </div> -->
           <div class="row py-7">
             <div class="col-lg-7 col-md-7 z-index-2 position-relative px-md-2 px-sm-5 mx-auto">
               <h2>대표원장 이종성</h2>

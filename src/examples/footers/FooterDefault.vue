@@ -80,28 +80,28 @@ defineProps({
             href: "https://www.creative-tim.com/affiliates/new"
           }
         ]
-      },  
-      {
-        name: "help & support",
-        items: [
-          {
-            name: "contact us",
-            href: "https://www.creative-tim.com/contact-us"
-          },
-          {
-            name: "knowledge center",
-            href: "https://www.creative-tim.com/knowledge-center"
-          },
-          {
-            name: "custom development",
-            href: "https://services.creative-tim.com/"
-          },
-          {
-            name: "sponsorships",
-            href: "https://www.creative-tim.com/sponsorships"
-          }
-        ]
       },
+      // {
+      //   name: "help & support",
+      //   items: [
+      //     {
+      //       name: "contact us",
+      //       href: "https://www.creative-tim.com/contact-us"
+      //     },
+      //     {
+      //       name: "knowledge center",
+      //       href: "https://www.creative-tim.com/knowledge-center"
+      //     },
+      //     {
+      //       name: "custom development",
+      //       href: "https://services.creative-tim.com/"
+      //     },
+      //     {
+      //       name: "sponsorships",
+      //       href: "https://www.creative-tim.com/sponsorships"
+      //     }
+      //   ]
+      // },
       {
         name: "legal",
         items: [
@@ -127,7 +127,7 @@ defineProps({
   <footer class="footer pt-5 mt-5">
     <div class="container">
       <div class="row">
-        <div class="col-md-3 mb-4 ms-auto">
+        <div class="col-md-5 mb-4 ms-auto">
           <div>
             <a :href="brand.route">
               <img :src="brand.logo" class="mb-3 footer-logo" alt="main_logo" />
@@ -143,7 +143,38 @@ defineProps({
             </ul>
           </div>
         </div>
-        <div class="col-md-2 col-sm-6 col-6 mb-4" v-for="{ name, items } of menus" :key="name">
+        <div class="col-md-7 mb-4 ms-auto">
+
+          <div class="col-12">
+            <div class="text-left">
+              <p class="text-dark my-4 text-sm font-weight-normal">
+                <RouterLink class="navbar-brand d-none-block" :to="{ name: 'terms-of-service' }" rel="tooltip"
+                  title="Designed and Coded by Creative Tim" data-placement="bottom">
+                  이용약관
+                </RouterLink>
+
+                |
+                <RouterLink class="navbar-brand d-none-block" :to="{ name: 'privacy-policy' }" rel="tooltip"
+                  title="Designed and Coded by Creative Tim" data-placement="bottom">
+                  개인정보처리방침
+                </RouterLink>
+              </p>
+              <p class="text-dark my-4 text-sm font-weight-normal">
+                서울온정치과의원 | 경북 성주군 성주읍 성주로 3289 더갤럭시빌딩 2층 (우편번호: 40031)<br />
+                대표자명 | 배인재<br />
+                사업자등록번호 | 106-64-00616 <br />
+                TEL | 배인재<br />
+                FAX | 106-64-00616 <br />
+                서울온정치과 블로그 | 대한통합치과학회 <br />
+                <!-- 
+                {{ new Date().getFullYear() }}
+                Material Kit by
+              <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>. -->
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="col-md-2 col-sm-6 col-6 mb-4" v-for="{ name, items } of menus" :key="name">
           <h6 class="text-sm">{{ name }}</h6>
           <ul class="flex-column ms-n3 nav">
             <li class="nav-item" v-for="item of items" :key="item.name">
@@ -152,36 +183,18 @@ defineProps({
               </a>
             </li>
           </ul>
-        </div>
+        </div> -->
 
         <div class="col-12">
-          <div class="text-left">
+          <div class="text-center">
             <p class="text-dark my-4 text-sm font-weight-normal">
-              <RouterLink class="navbar-brand d-none-block" :to="{ name: 'terms-of-service' }" rel="tooltip" title="Designed and Coded by Creative Tim"
-                data-placement="bottom">
-                이용약관
-              </RouterLink>
-
-               | 
-              <RouterLink class="navbar-brand d-none-block" :to="{ name: 'privacy-policy' }" rel="tooltip" title="Designed and Coded by Creative Tim"
-                data-placement="bottom">
-                개인정보처리방침
-              </RouterLink>
-            </p>
-            <p class="text-dark my-4 text-sm font-weight-normal">
-              서울온정치과의원 | 경북 성주군 성주읍 성주로 3289 더갤럭시빌딩 2층 (우편번호: 40031)<br/>
-              대표자명 | 배인재<br/>
-              사업자등록번호 | 106-64-00616 <br/>
-              TEL | 배인재<br/>
-              FAX | 106-64-00616 <br/>
-              서울온정치과 블로그 | 대한통합치과학회 <br/>
+              All rights reserved. Copyright ©
               {{ new Date().getFullYear() }}
-              Material Kit by
-              <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
+              <a href="https://www.creative-tim.com" target="_blank">서울온정치과</a>.
             </p>
           </div>
         </div>
-        <div class="col-12">
+        <!-- <div class="col-12">
           <div class="text-center">
             <p class="text-dark my-4 text-sm font-weight-normal">
               All rights reserved. Copyright ©
@@ -190,17 +203,7 @@ defineProps({
               <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
             </p>
           </div>
-        </div>
-        <div class="col-12">
-          <div class="text-center">
-            <p class="text-dark my-4 text-sm font-weight-normal">
-              All rights reserved. Copyright ©
-              {{ new Date().getFullYear() }}
-              Material Kit by
-              <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
-            </p>
-          </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </footer>

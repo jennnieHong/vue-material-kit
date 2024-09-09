@@ -1,29 +1,30 @@
 import { createRouter, createWebHistory } from "vue-router";
 import PresentationView from "../views/Presentation/PresentationView.vue";
-import DigitalImplantView from "../views/LandingPages/DigitalImplant/AboutView.vue";
-import SinusLiftView from "../views/LandingPages/SinusLift/AboutView.vue";
-import InsuranceView from "../views/LandingPages/Insurance/AboutView.vue";
-import ConsciousSedationView from "../views/LandingPages/ConsciousSedation/AboutView.vue";
-import CavityView from "../views/LandingPages/Cavity/AboutView.vue";
-import RootCanalView from "../views/LandingPages/RootCanal/AboutView.vue";
-import GumView from "../views/LandingPages/Gum/AboutView.vue";
-import WisdomToothView from "../views/LandingPages/WisdomTooth/AboutView.vue";
-import CrownView from "../views/LandingPages/Crown/AboutView.vue";
-import OrthodonticView from "../views/LandingPages/Orthodontic/AboutView.vue";
-import ProsthodonticView from "../views/LandingPages/Prosthodontic/AboutView.vue";
-import PrivacyPolicy from "../views/LandingPages/PrivacyPolicy/AboutView.vue";
-import TermsOfService from "../views/LandingPages/TermsOfService/AboutView.vue";
+import DigitalImplantView from "../views/LandingPages/DigitalImplant/AboutView.vue"; //네비게이션임플란트
+import SinusLiftView from "../views/LandingPages/SinusLift/AboutView.vue"; //상악동 거상술
+import InsuranceView from "../views/LandingPages/Insurance/AboutView.vue"; //보험임플란트
+import ConsciousSedationView from "../views/LandingPages/ConsciousSedation/AboutView.vue"; //의식하진정요법
+import CavityView from "../views/LandingPages/Cavity/AboutView.vue"; //충치치료
+import RootCanalView from "../views/LandingPages/RootCanal/AboutView.vue"; //신경치료
+import GumView from "../views/LandingPages/Gum/AboutView.vue"; //잇몸치료
+import WisdomToothView from "../views/LandingPages/WisdomTooth/AboutView.vue"; //사랑니발치
+import CrownView from "../views/LandingPages/Crown/AboutView.vue"; //크라운보철
+import OrthodonticView from "../views/LandingPages/Orthodontic/AboutView.vue"; //교정치료
+import ProsthodonticView from "../views/LandingPages/Prosthodontic/AboutView.vue"; //미백치료
+import PrivacyPolicy from "../views/LandingPages/PrivacyPolicy/AboutView.vue"; //개인정보처리방침 --
+import TermsOfService from "../views/LandingPages/TermsOfService/AboutView.vue"; //이용약관 --
 import AboutView from "../views/LandingPages/AboutUs/AboutView.vue";
-import ContactView from "../views/LandingPages/ContactUs/ContactView.vue";
+import ContactView from "../views/LandingPages/ContactUs/ContactView.vue"; //전화문의 --
+import ConsultationView from "../views/LandingPages/Consultation/ContactView.vue"; //상담문의 --
 import AuthorView from "../views/LandingPages/Author/AuthorView.vue";
-import IntroductionView from "../views/LandingPages/Introduction/AuthorView.vue";
-import UniquenessView from "../views/LandingPages/Uniqueness/AuthorView.vue";
-import ValuesView from "../views/LandingPages/Values/AuthorView.vue";
+import IntroductionView from "../views/LandingPages/Introduction/AuthorView.vue"; //인사말
+import UniquenessView from "../views/LandingPages/Uniqueness/AuthorView.vue"; //특별함
+import ValuesView from "../views/LandingPages/Values/AuthorView.vue"; //진료철학
 import CurriculumView from "../views/LandingPages/Curriculum/AuthorView.vue";
-import CurriculumViewBij from "../views/LandingPages/Curriculum/AuthorViewBij.vue";
-import CurriculumViewLjs from "../views/LandingPages/Curriculum/AuthorViewLjs.vue";
-import HoursView from "../views/LandingPages/Hours/AuthorView.vue";
-import MapView from "../views/LandingPages/Map/AuthorView.vue";
+import CurriculumViewBij from "../views/LandingPages/Curriculum/AuthorViewBij.vue"; //의료진1
+import CurriculumViewLjs from "../views/LandingPages/Curriculum/AuthorViewLjs.vue"; //의료진2
+import HoursView from "../views/LandingPages/Hours/AuthorView.vue"; //진료시간
+import MapView from "../views/LandingPages/Map/AuthorView.vue"; //오시는길 --
 import SignInBasicView from "../views/LandingPages/SignIn/BasicView.vue";
 import PageHeaders from "../layouts/sections/page-sections/page-headers/HeadersView.vue";
 import PageFeatures from "../layouts/sections/page-sections/features/FeaturesView.vue";
@@ -126,6 +127,11 @@ const router = createRouter({
       path: "/pages/landing-pages/contact-us",
       name: "contactus",
       component: ContactView,
+    },
+    {
+      path: "/pages/landing-pages/consultationView",
+      name: "consultation",
+      component: ConsultationView,
     },
     {
       path: "/pages/landing-pages/author",
@@ -281,7 +287,7 @@ const router = createRouter({
       if (to.hash) {
         return {
           el: to.hash,
-          behavior: 'smooth',
+          behavior: "smooth",
         };
       }
 
@@ -291,9 +297,9 @@ const router = createRouter({
       //   return { left: 0, top: 300, behavior: 'smooth' };
       // }
 
-      if (to.name === 'about') {
+      if (to.name === "about") {
         // About 페이지에서 특정 위치로 스크롤
-        return { left: 0, top: 200, behavior: 'smooth' };
+        return { left: 0, top: 200, behavior: "smooth" };
       }
 
       return { left: 0, top: 0 };

@@ -8,7 +8,8 @@ import MyNewsletter from "../AboutUs/Sections/MyNewsletter.vue";
 
 //example components
 import DefaultNavbar from "../../../examples/navbars/NavbarDefault.vue";
-import DefaultFooter from "../../../examples/footers/FooterDefault.vue";
+// import DefaultFooter from "../../../examples/footers/FooterDefault.vue";
+import DefaultFooter from "@/examples/footers/FooterDefault.vue";
 
 //image
 import bg0 from "@/assets/img/myImages/implant.jpg";
@@ -77,15 +78,15 @@ onUnmounted(() => {
   <DefaultNavbar :action="{
     route: 'javascript:;',
     label: '오시는 길',
-    color: 'btn-white',
+    color: 'bg-gradient-success',
   }" transparent />
   <header class="bg-gradient-dark">
     <div class="page-header min-vh-35" :style="{ backgroundImage: `url(${bg0})` }">
       <span class="mask bg-gradient-dark opacity-6"></span>
-      <div class="container" >
+      <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-8 text-center mx-auto my-auto">
-            <h1 class="text-white" >
+            <h1 class="text-white">
               디지털 임플란트
               <!-- <span class="text-white" id="typed"></span> -->
             </h1>

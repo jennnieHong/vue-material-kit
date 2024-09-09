@@ -1,5 +1,7 @@
 <script setup>
-defineProps({
+import { ref, computed, watch } from 'vue';
+
+const props = defineProps({
   id: {
     type: String,
     default: "",
@@ -53,6 +55,31 @@ defineProps({
     default: "",
   },
 });
+
+const formattedValue = ref(props.value);
+
+watch(() => props.value, (newValue) => {
+  if (props.type === 'phone') {
+    console.log("~~")
+    formattedValue.value = formatPhoneNumber(newValue);
+  } else {
+    formattedValue.value = newValue;
+  }
+});
+
+function formatPhoneNumber(value) {
+  // Remove all non-digit characters
+  let digits = value.replace(/\D/g, '');
+  // Format the digits into a phone number format
+  if (digits.length <= 3) {
+    return digits;
+  } else if (digits.length <= 7) {
+    return `${digits.slice(0, 3)}-${digits.slice(3)}`;
+  } else {
+    return `${digits.slice(0, 3)}-${digits.slice(3, 7)}-${digits.slice(7, 11)}`;
+  }
+}
+
 function getClasses(size, success, error) {
   let sizeValue, isValidValue;
 
@@ -69,23 +96,17 @@ function getClasses(size, success, error) {
   return `${sizeValue} ${isValidValue}`;
 }
 </script>
+
 <template>
   <div class="input-group">
-    <label v-if="label" :class="label.class">{{
-      typeof label == "string" ? label : label.text
-    }}</label>
-    <span v-if="icon" class="input-group-text"
-      ><i class="fas" :class="`fa-${icon}`" aria-hidden="true"></i
-    ></span>
-    <input
-      :id="id"
-      :type="type"
-      class="form-control"
-      :class="[getClasses(size, success, error), inputClass]"
-      :value="value"
-      :placeholder="placeholder"
-      :isRequired="isRequired"
-      :disabled="isDisabled"
-    />
+    <label v-if="label" :class="label.class">
+      {{ typeof label == "string" ? label : label.text }}
+    </label>
+    <span v-if="icon" class="input-group-text">
+      <i class="fas" :class="`fa-${icon}`" aria-hidden="true"></i>
+    </span>
+    <input :id="id" :type="type" class="form-control" :class="[getClasses(size, success, error), inputClass]"
+      :value="formattedValue" :placeholder="placeholder" :required="isRequired" :disabled="isDisabled"
+      @input="$emit('update:value', $event.target.value)" />
   </div>
 </template>

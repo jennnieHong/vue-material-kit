@@ -4,7 +4,8 @@ import DefaultNavbar from "../../../examples/navbars/NavbarDefault.vue";
 import Header from "../../../examples/Header.vue";
 
 // sections
-import Footer from "./Sections/AuthorFooter.vue";
+// import Footer from "./Sections/AuthorFooter.vue";
+import Footer from "@/examples/footers/FooterDefault.vue";
 import Profile1 from "./Sections/AuthorProfileBij.vue";
 import Profile2 from "./Sections/AuthorProfileLjs.vue";
 import Posts from "./Sections/AuthorPosts.vue";
@@ -22,10 +23,10 @@ import image from "@/assets/img/city-profile.jpg";
     </div>
   </Header>
   <div class="card card-body blur shadow-blur mx-3 mx-md-4 mt-n6 mb-4">
-    <!-- <Profile1 />
-    <Profile2 /> -->
-    <Posts />
+    <Profile1 />
+    <Profile2 />
+    <!-- <Posts /> -->
   </div>
-  <Contact />
+  <!-- <Contact /> -->
   <Footer />
 </template>

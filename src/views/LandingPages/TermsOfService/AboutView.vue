@@ -8,7 +8,8 @@ import MyNewsletter from "../AboutUs/Sections/MyNewsletter.vue";
 
 //example components
 import DefaultNavbar from "../../../examples/navbars/NavbarDefault.vue";
-import DefaultFooter from "../../../examples/footers/FooterDefault.vue";
+// import DefaultFooter from "../../../examples/footers/FooterDefault.vue";
+import DefaultFooter from "@/examples/footers/FooterDefault.vue";
 
 //material components
 import MaterialTextArea from "@/components/MaterialTextArea.vue";
@@ -86,7 +87,7 @@ onUnmounted(() => {
   <DefaultNavbar :action="{
     route: 'javascript:;',
     label: '오시는 길',
-    color: 'btn-white',
+    color: 'bg-gradient-success',
   }" transparent />
   <header class="bg-gradient-dark">
     <div class="page-header min-vh-35" :style="{ backgroundImage: `url(${bg0})` }">

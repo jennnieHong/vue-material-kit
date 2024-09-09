@@ -3,7 +3,8 @@ import { onMounted, onUnmounted } from "vue";
 
 //example components
 import DefaultNavbar from "../../../examples/navbars/NavbarDefault.vue";
-import DefaultFooter from "../../../examples/footers/FooterDefault.vue";
+// import DefaultFooter from "../../../examples/footers/FooterDefault.vue";
+import DefaultFooter from "@/examples/footers/FooterDefault.vue";
 
 //image
 import bg0 from "@/assets/img/myImages/implant.jpg";
@@ -45,7 +46,7 @@ onUnmounted(() => {
   <DefaultNavbar :action="{
     route: 'javascript:;',
     label: '오시는 길',
-    color: 'btn-white',
+    color: 'bg-gradient-success',
   }" transparent />
   <header class="bg-gradient-dark">
     <div class="page-header min-vh-75" :style="{ backgroundImage: `url(${bg0})` }">

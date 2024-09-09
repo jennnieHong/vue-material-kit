@@ -4,7 +4,8 @@ import DefaultNavbar from "../../../examples/navbars/NavbarDefault.vue";
 import Header from "../../../examples/Header.vue";
 
 // sections
-import Footer from "./Sections/AuthorFooter.vue";
+// import Footer from "./Sections/AuthorFooter.vue";
+import Footer from "@/examples/footers/FooterDefault.vue";
 import Profile from "./Sections/AuthorProfileLjs.vue";
 import Posts from "./Sections/AuthorPosts.vue";
 import Contact from "./Sections/AuthorContact.vue";

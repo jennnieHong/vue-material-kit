@@ -15,7 +15,8 @@ const props = defineProps({
     color: String,
     label: String,
     default: () => ({
-      route: "https://www.creative-tim.com/product/vue-material-kit",
+      // route: "https://www.creative-tim.com/product/vue-material-kit",
+      route: "map",
       color: "bg-gradient-success",
       label: "오시는 길"
     })
@@ -26,7 +27,7 @@ const props = defineProps({
     color: String,
     label: String,
     default: () => ({
-      route: "https://www.creative-tim.com/product/vue-material-kit",
+      route: "#",
       color: "bg-gradient-warning",
       label: "전화 문의"
     })
@@ -254,7 +255,7 @@ onBeforeUnmount(() => {
                           <span>디지털 네비게이션 임플란트</span>
                         </RouterLink>
                         <div>
-                          <RouterLink :to="{ name: 'digital-implant' }" class="dropdown-item border-radius-md">
+                          <RouterLink :to="{ name: 'consultation' }" class="dropdown-item border-radius-md">
                             <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960"
                               fill="#5f6368">
                               <path
@@ -268,7 +269,7 @@ onBeforeUnmount(() => {
                           <span>상악동 거상술</span>
                         </RouterLink>
                         <div>
-                          <RouterLink :to="{ name: 'digital-implant' }" class="dropdown-item border-radius-md">
+                          <RouterLink :to="{ name: 'consultation' }" class="dropdown-item border-radius-md">
                             <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960"
                               fill="#5f6368">
                               <path
@@ -282,7 +283,7 @@ onBeforeUnmount(() => {
                           <span>보험 임플란트</span>
                         </RouterLink>
                         <div>
-                          <RouterLink :to="{ name: 'digital-implant' }" class="dropdown-item border-radius-md">
+                          <RouterLink :to="{ name: 'consultation' }" class="dropdown-item border-radius-md">
                             <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960"
                               fill="#5f6368">
                               <path
@@ -296,7 +297,7 @@ onBeforeUnmount(() => {
                           <span>의식하진정요법</span>
                         </RouterLink>
                         <div>
-                          <RouterLink :to="{ name: 'conscious-sedation' }" class="dropdown-item border-radius-md">
+                          <RouterLink :to="{ name: 'consultation' }" class="dropdown-item border-radius-md">
                             <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960"
                               fill="#5f6368">
                               <path
@@ -305,7 +306,7 @@ onBeforeUnmount(() => {
                           </RouterLink>
                         </div>
                       </div>
-                      <div class="d-flex justify-content-between">
+                      <!-- <div class="d-flex justify-content-between">
                         <RouterLink :to="{ name: 'about' }" class="dropdown-item border-radius-md">
                           <span>about</span>
                         </RouterLink>
@@ -346,60 +347,60 @@ onBeforeUnmount(() => {
                             </svg>
                           </a>
                         </div>
-                      </div>
+                      </div> -->
                     </div>
                   </div>
                 </div>
               </div>
               <div class="d-lg-none">
                 <div class="d-flex justify-content-between">
-                  <div>
+                  <!-- <div>
                     <a href="https://www.creative-tim.com/product/vue-material-kit-pro">
                       <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" fill="#5f6368">
                         <path
                           d="m480-80-10-120h-10q-142 0-241-99t-99-241q0-142 99-241t241-99q71 0 132.5 26.5t108 73q46.5 46.5 73 108T800-540q0 75-24.5 144t-67 128q-42.5 59-101 107T480-80Zm80-146q71-60 115.5-140.5T720-540q0-109-75.5-184.5T460-800q-109 0-184.5 75.5T200-540q0 109 75.5 184.5T460-280h100v54Zm-101-95q17 0 29-12t12-29q0-17-12-29t-29-12q-17 0-29 12t-12 29q0 17 12 29t29 12Zm-29-127h60q0-30 6-42t38-44q18-18 30-39t12-45q0-51-34.5-76.5T460-720q-44 0-74 24.5T344-636l56 22q5-17 19-33.5t41-16.5q27 0 40.5 15t13.5 33q0 17-10 30.5T480-558q-35 30-42.5 47.5T430-448Zm30-65Z" />
                       </svg>
                     </a>
-                  </div>
+                  </div> -->
                   <RouterLink :to="{ name: 'digital-implant' }" class="dropdown-item border-radius-md">
                     <span>디지털 네비게이션 임플란트</span>
                   </RouterLink>
                 </div>
                 <div class="d-flex justify-content-between">
-                  <div>
+                  <!-- <div>
                     <a href="https://www.creative-tim.com/product/vue-material-kit-pro">
                       <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" fill="#5f6368">
                         <path
                           d="m480-80-10-120h-10q-142 0-241-99t-99-241q0-142 99-241t241-99q71 0 132.5 26.5t108 73q46.5 46.5 73 108T800-540q0 75-24.5 144t-67 128q-42.5 59-101 107T480-80Zm80-146q71-60 115.5-140.5T720-540q0-109-75.5-184.5T460-800q-109 0-184.5 75.5T200-540q0 109 75.5 184.5T460-280h100v54Zm-101-95q17 0 29-12t12-29q0-17-12-29t-29-12q-17 0-29 12t-12 29q0 17 12 29t29 12Zm-29-127h60q0-30 6-42t38-44q18-18 30-39t12-45q0-51-34.5-76.5T460-720q-44 0-74 24.5T344-636l56 22q5-17 19-33.5t41-16.5q27 0 40.5 15t13.5 33q0 17-10 30.5T480-558q-35 30-42.5 47.5T430-448Zm30-65Z" />
                       </svg>
                     </a>
-                  </div>
+                  </div> -->
                   <RouterLink :to="{ name: 'sinus-lift' }" class="dropdown-item border-radius-md">
                     <span>상악동 거상술</span>
                   </RouterLink>
                 </div>
                 <div class="d-flex justify-content-start">
-                  <div>
+                  <!-- <div>
                     <a href="https://www.creative-tim.com/product/vue-material-kit-pro">
                       <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" fill="#5f6368">
                         <path
                           d="m480-80-10-120h-10q-142 0-241-99t-99-241q0-142 99-241t241-99q71 0 132.5 26.5t108 73q46.5 46.5 73 108T800-540q0 75-24.5 144t-67 128q-42.5 59-101 107T480-80Zm80-146q71-60 115.5-140.5T720-540q0-109-75.5-184.5T460-800q-109 0-184.5 75.5T200-540q0 109 75.5 184.5T460-280h100v54Zm-101-95q17 0 29-12t12-29q0-17-12-29t-29-12q-17 0-29 12t-12 29q0 17 12 29t29 12Zm-29-127h60q0-30 6-42t38-44q18-18 30-39t12-45q0-51-34.5-76.5T460-720q-44 0-74 24.5T344-636l56 22q5-17 19-33.5t41-16.5q27 0 40.5 15t13.5 33q0 17-10 30.5T480-558q-35 30-42.5 47.5T430-448Zm30-65Z" />
                       </svg>
                     </a>
-                  </div>
+                  </div> -->
                   <RouterLink :to="{ name: 'insurance' }" class="dropdown-item border-radius-md">
                     <span>보험 임플란트</span>
                   </RouterLink>
                 </div>
-                <div class="d-flex flex-row">
-                  <div class="ms-3">
+                <div class="d-flex justify-content-start">
+                  <!-- <div>
                     <a href="https://www.creative-tim.com/product/vue-material-kit-pro">
                       <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" fill="#5f6368">
                         <path
                           d="m480-80-10-120h-10q-142 0-241-99t-99-241q0-142 99-241t241-99q71 0 132.5 26.5t108 73q46.5 46.5 73 108T800-540q0 75-24.5 144t-67 128q-42.5 59-101 107T480-80Zm80-146q71-60 115.5-140.5T720-540q0-109-75.5-184.5T460-800q-109 0-184.5 75.5T200-540q0 109 75.5 184.5T460-280h100v54Zm-101-95q17 0 29-12t12-29q0-17-12-29t-29-12q-17 0-29 12t-12 29q0 17 12 29t29 12Zm-29-127h60q0-30 6-42t38-44q18-18 30-39t12-45q0-51-34.5-76.5T460-720q-44 0-74 24.5T344-636l56 22q5-17 19-33.5t41-16.5q27 0 40.5 15t13.5 33q0 17-10 30.5T480-558q-35 30-42.5 47.5T430-448Zm30-65Z" />
                       </svg>
                     </a>
-                  </div>
+                  </div> -->
                   <RouterLink :to="{ name: 'conscious-sedation' }" class="dropdown-item border-radius-md">
                     <span>의식하진정요법</span>
                   </RouterLink>
@@ -495,6 +496,40 @@ onBeforeUnmount(() => {
           </li>
           <li class="nav-item dropdown dropdown-hover mx-2">
             <a role="button" class="nav-link ps-2 d-flex cursor-pointer align-items-center" :class="getTextColor()"
+              id="dropdownMenuPages" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="material-icons opacity-6 me-2 text-md" :class="getTextColor()">dashboard</i>
+              상담
+              <img :src="getArrowColor()" alt="down-arrow" class="arrow ms-2 d-lg-block d-none" />
+              <img :src="getArrowColor()" alt="down-arrow" class="arrow ms-1 d-lg-none d-block ms-auto" />
+            </a>
+            <div class="dropdown-menu dropdown-menu-animation ms-n3 dropdown-md p-3 border-radius-xl mt-0 mt-lg-3"
+              aria-labelledby="dropdownMenuPages">
+              <div class="row d-none d-lg-block">
+                <div class="col-12 px-4 py-2">
+                  <div class="row">
+                    <div class="position-relative">
+                      <RouterLink :to="{ name: 'consultation' }" class="dropdown-item border-radius-md">
+                        <span>상담문의</span>
+                      </RouterLink>
+                      <RouterLink :to="{ name: 'orthodontic' }" class="dropdown-item border-radius-md">
+                        <span>전화문의</span>
+                      </RouterLink>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="d-lg-none">
+                <RouterLink :to="{ name: 'consultation' }" class="dropdown-item border-radius-md">
+                  <span>상담문의</span>
+                </RouterLink>
+                <RouterLink :to="{ name: 'orthodontic' }" class="dropdown-item border-radius-md">
+                  <span>전화문의</span>
+                </RouterLink>
+              </div>
+            </div>
+          </li>
+          <!-- <li class="nav-item dropdown dropdown-hover mx-2">
+            <a role="button" class="nav-link ps-2 d-flex cursor-pointer align-items-center" :class="getTextColor()"
               id="dropdownMenuBlocks" data-bs-toggle="dropdown" aria-expanded="false">
               <i class="material-icons opacity-6 me-2 text-md" :class="getTextColor()">view_day</i>
               상담
@@ -516,10 +551,7 @@ onBeforeUnmount(() => {
                               Page Sections
                             </h6>
                             <span class="text-sm">See all sections</span>
-                            <!-- <span>인사말</span> -->
                             <div>
-                              <!-- <h6
-                                class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0"> -->
                               <h6 class="text-sm">
                                 Page Sections
                               </h6>
@@ -777,31 +809,40 @@ onBeforeUnmount(() => {
                 </div>
               </div>
             </div>
-          </li>
+          </li> -->
 
           <li class="nav-item dropdown dropdown-hover mx-2">
             <div>
               <div class="d-flex justify-content-between" style="width: 100%;">
                 <!-- <div class="d-flex flex-row justify-content-start" style="width: 100%;"> -->
 
-                <a href="https://www.creative-tim.com/product/vue-material-kit-pro"
+                <!-- <a href="https://www.creative-tim.com/product/vue-material-kit-pro"
                   class="btn btn-sm bg-gradient-success mb-0 d-lg-none d-block mx-3 " style="flex-basis: 45%;">
                   <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" fill="#fff">
                     <path
                       d="M480-301q99-80 149.5-154T680-594q0-90-56-148t-144-58q-88 0-144 58t-56 148q0 65 50.5 139T480-301Zm0 101Q339-304 269.5-402T200-594q0-125 78-205.5T480-880q124 0 202 80.5T760-594q0 94-69.5 192T480-200Zm0-320q33 0 56.5-23.5T560-600q0-33-23.5-56.5T480-680q-33 0-56.5 23.5T400-600q0 33 23.5 56.5T480-520ZM200-80v-80h560v80H200Zm280-520Z" />
                   </svg>
                   오시는길
-                </a>
+                </a> -->
+
+                <RouterLink :to="{ name: 'map' }" class="btn btn-sm bg-gradient-success mb-0 d-lg-none d-block mx-3"
+                  style="flex-basis: 45%;">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" fill="#fff">
+                    <path
+                      d="M480-301q99-80 149.5-154T680-594q0-90-56-148t-144-58q-88 0-144 58t-56 148q0 65 50.5 139T480-301Zm0 101Q339-304 269.5-402T200-594q0-125 78-205.5T480-880q124 0 202 80.5T760-594q0 94-69.5 192T480-200Zm0-320q33 0 56.5-23.5T560-600q0-33-23.5-56.5T480-680q-33 0-56.5 23.5T400-600q0 33 23.5 56.5T480-520ZM200-80v-80h560v80H200Zm280-520Z" />
+                  </svg>
+                  <span>오시는길</span>
+                </RouterLink>
 
 
-
-                <a href="https://www.creative-tim.com/product/vue-material-kit-pro"
-                  class="btn btn-sm bg-gradient-warning mb-0 d-lg-none d-block mx-3" style="flex-basis: 45%;">
+                <RouterLink :to="{ name: 'map' }" class="btn btn-sm bg-gradient-warning mb-0 d-lg-none d-block mx-3"
+                  style="flex-basis: 45%;">
                   <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" fill="#fff">
                     <path
                       d="M798-120q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z" />
-                  </svg>전화문의
-                </a>
+                  </svg>
+                  <span>전화문의</span>
+                </RouterLink>
               </div>
             </div>
           </li>
@@ -834,14 +875,22 @@ onBeforeUnmount(() => {
         </ul>
         <ul class="navbar-nav d-lg-block d-none">
           <li class="nav-item ">
-            <a :href="action.route" class="btn btn-sm mb-0 mx-1" :class="action.color"
+            <!-- <a :href="action.route" class="btn btn-sm mb-0 mx-1" :class="action.color"
               onclick="smoothToPricing('pricing-soft-ui')">
 
               <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" fill="#fff">
                 <path
                   d="M480-301q99-80 149.5-154T680-594q0-90-56-148t-144-58q-88 0-144 58t-56 148q0 65 50.5 139T480-301Zm0 101Q339-304 269.5-402T200-594q0-125 78-205.5T480-880q124 0 202 80.5T760-594q0 94-69.5 192T480-200Zm0-320q33 0 56.5-23.5T560-600q0-33-23.5-56.5T480-680q-33 0-56.5 23.5T400-600q0 33 23.5 56.5T480-520ZM200-80v-80h560v80H200Zm280-520Z" />
               </svg>
-              {{ action.label }}</a>
+              {{ action.label }}</a> -->
+
+            <RouterLink :to="{ name: 'map' }" class="btn btn-sm mb-0 mx-1" :class="action.color">
+              <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" fill="#fff">
+                <path
+                  d="M480-301q99-80 149.5-154T680-594q0-90-56-148t-144-58q-88 0-144 58t-56 148q0 65 50.5 139T480-301Zm0 101Q339-304 269.5-402T200-594q0-125 78-205.5T480-880q124 0 202 80.5T760-594q0 94-69.5 192T480-200Zm0-320q33 0 56.5-23.5T560-600q0-33-23.5-56.5T480-680q-33 0-56.5 23.5T400-600q0 33 23.5 56.5T480-520ZM200-80v-80h560v80H200Zm280-520Z" />
+              </svg>
+              <span>{{ action.label }}</span>
+            </RouterLink>
           </li>
         </ul>
         <ul class="navbar-nav d-lg-block d-none">
