@@ -153,12 +153,8 @@ onBeforeUnmount(() => {
       'container w-100': true,
       'px-0': isMobile
     }">
-      <RouterLink class="navbar-brand d-none-block" :class="[
-        (props.transparent && textDark.value) || !isTransparent
-          ? 'text-dark font-weight-bolder '
-          : 'text-white font-weight-bolder '
-      ]" :to="{ name: 'presentation' }" rel="tooltip" title="Designed and Coded by Creative Tim"
-        data-placement="bottom">
+      <RouterLink class="navbar-brand d-none-block" :class=getTextColor() :to="{ name: 'presentation' }" rel="tooltip"
+        title="Designed and Coded by Creative Tim" data-placement="bottom">
         서울온정치과
       </RouterLink>
       <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse"

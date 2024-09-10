@@ -13,12 +13,16 @@ import MaterialSocialButton from "@/components/MaterialSocialButton.vue";
 // sections
 import PresentationCounter from "./Sections/PresentationCounter.vue";
 import PresentationPages from "./Sections/PresentationPages.vue";
+import InsideViews from "./Sections/InsideViews.vue";
 import PresentationExample from "./Sections/PresentationExample.vue";
+import Department from "./Sections/Department.vue"; //진료과목
 import data from "./Sections/Data/designBlocksData";
-import clinicList from "./Sections/Data/clinicList";
+import clinicList from "./Sections/Data/clinicList"; //진료과목리스트js파일 -- db로 대체 
 import BuiltByDevelopers from "./Components/BuiltByDevelopers.vue";
 import PresentationTestimonials from "./Sections/PresentationTestimonials.vue";
 import PresentationInformation from "./Sections/PresentationInformation.vue";
+import Map from "./Sections/Map.vue";
+import clinicList2 from "./Sections/Data/clinicList";
 
 //images
 import vueMkHeader from "@/assets/img/main-header.jpg";
@@ -63,7 +67,7 @@ onUnmounted(() => {
   <div class="container position-sticky z-index-sticky top-0">
     <div class="row">
       <!-- <div class="col"> -->
-      <NavbarDefault :sticky="true" />
+      <NavbarDefault :sticky="true" transparent="true" darkText="true" />
       <!-- </div> -->
     </div>
   </div>
@@ -71,11 +75,11 @@ onUnmounted(() => {
     <div class="page-header min-vh-75 opacity-7" :style="`background-image: url(${vueMkHeader})`" loading="lazy">
       <div class="container">
         <div class="row">
-          <div class="col-lg-7 text-left mx-auto position-relative">
+          <div class="col-lg-6 text-dark text-left mx-auto position-relative mt-10">
             <!-- <h1 class="text-white pt-3 mt-n5 me-2" :style="{ display: 'inline-block ' }"> -->
-            <h1 class="pt-3 mt-n5" :style="{ display: 'inline-block ', marginLeft: '50px' }">
+            <!-- <h1 class="pt-3 mt-n5" :style="{ display: 'inline-block ', marginLeft: '50px' }">
               서울온정치과
-            </h1>
+            </h1> -->
             <!-- <p class="lead text-white px-5 mt-3" :style="{ fontWeight: '500' }"> -->
             <p class="lead px-5 mt-3" :style="{ fontWeight: '500' }"><span id="typed"></span>
 
@@ -98,9 +102,14 @@ onUnmounted(() => {
   <div class="card card-body blur shadow-blur mx-3 mx-md-4 mt-n6">
     <!-- <PresentationCounter /> -->
     <!-- <PresentationInformation /> -->
-    <PresentationExample :data="clinicList" />
     <!-- <PresentationExample :data="data" /> -->
+    <!-- 진료과목 -->
+    <Department :data="clinicList" />
+    <!-- 오시는길 -->
+    <Map />
+    <!-- 병원내부사진 -->
     <!-- <PresentationPages /> -->
+    <InsideViews />
     <!-- <BuiltByDevelopers /> -->
 
     <!-- <div class="container">
