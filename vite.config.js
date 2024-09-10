@@ -12,7 +12,10 @@ export default defineConfig({
     },
   },
   server: {
-    host: process.env.HOST || "localhost",
-    port: process.env.PORT || 3000,
+    host:'0.0.0.0',
+    // host: true, // 외부 IP에서의 접속을 허용
+    // host: process.env.HOST || "localhost",
+    // port: process.env.PORT || 3000,
+    port: 3000,
   },
 });

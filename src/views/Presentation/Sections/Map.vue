@@ -35,8 +35,32 @@ const props = defineProps({
     type: String,
     default: "",
   },
+
 });
 
+// 상태 설정
+const isTransparent = ref(props.transparent);
+const isMobile = ref(false);
+
+const checkIfMobile = () => {
+  console.log("!~")
+  console.log(isMobile.value)
+  // 576px 이하인 경우 모바일 사이즈로 간주
+  isMobile.value = window.innerWidth <= 576;
+};
+
+
+// 스크롤 이벤트 추가
+const handleScroll = () => {
+  const scrollTop = window.scrollY || window.pageYOffset;
+  isTransparent.value = scrollTop <= 200;
+};
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll);
+  handleScroll(); // 초기 스크롤 상태 설정
+  window.addEventListener("resize", checkIfMobile);
+  checkIfMobile(); // 초기화 시 현재 상태 확인
+});
 // variables
 const { toClipboard } = useClipboard();
 
@@ -207,16 +231,17 @@ const highlighter = (code) => {
           <!-- <MaterialBadge color="success" class="mb-3">진료과목</MaterialBadge> -->
 
           <h2 class="text-dark mb-0">찾아오시는 길</h2>
+          <p class="text-dark opacity-8 mb-0 mt-3">
+            경북 성주군 성주읍 성주로 3289, 더갤럭시빌딩 2층<br />
+            성주군 종합사회복지관, 성주국민체육센터 부근
+          </p>
           <div class="position-relative p-4 pb-2">
 
-            <a class="btn btn-sm bg-gradient-dark position-absolute end-4 mt-3 z-index-3" @click="copy($event)"
-              href="javascript:;"><i class="fas fa-copy text-sm me-1"></i> Copy</a>
+            <a class="btn btn-sm bg-gradient-dark  mt-3 z-index-3"
+            :class="{'position-absolute end-4':!isMobile}" @click="copy($event)"
+              href="javascript:;"><i class="fas fa-copy text-sm me-1"></i> 주소복사</a>
           </div>
         </div>
-        <p class="text-dark opacity-8 mb-0 mt-3">
-          경북 성주군 성주읍 성주로 3289, 더갤럭시빌딩 2층<br />
-          성주군 종합사회복지관, 성주국민체육센터 부근
-        </p>
         <button class="btn black-background">버튼</button>
 
 
