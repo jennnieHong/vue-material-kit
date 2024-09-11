@@ -7,7 +7,7 @@ import { onMounted, ref } from "vue";
 import useClipboard from "vue-clipboard3";
 import View from "../../../layouts/sections/components/View.vue";
 
-import BadgesSimple from "./../components/BadgesSimple.vue";
+// import BadgesSimple from "./../components/BadgesSimple.vue";
 // images
 import emma from "@/assets/img/team-5.jpg";
 import william from "@/assets/img/bruce-mars.jpg";
@@ -43,8 +43,6 @@ const isTransparent = ref(props.transparent);
 const isMobile = ref(false);
 
 const checkIfMobile = () => {
-  console.log("!~")
-  console.log(isMobile.value)
   // 576px 이하인 경우 모바일 사이즈로 간주
   isMobile.value = window.innerWidth <= 576;
 };
@@ -193,7 +191,8 @@ const copy = async (event) => {
       "start-0",
       "mt-2",
       "mx-auto",
-      "py-2"
+      "py-2",
+      "z-index-2"
     );
     alert.style.transform = "translate3d(0px, 0px, 0px)";
     alert.style.opacity = "0";
@@ -237,9 +236,8 @@ const highlighter = (code) => {
           </p>
           <div class="position-relative p-4 pb-2">
 
-            <a class="btn btn-sm bg-gradient-dark  mt-3 z-index-3"
-            :class="{'position-absolute end-4':!isMobile}" @click="copy($event)"
-              href="javascript:;"><i class="fas fa-copy text-sm me-1"></i> 주소복사</a>
+            <a class="btn btn-sm bg-gradient-dark  mt-3 z-index-3" :class="{ 'position-absolute end-4': !isMobile }"
+              @click="copy($event)" href="javascript:;"><i class="fas fa-copy text-sm me-1"></i> 주소복사</a>
           </div>
         </div>
         <button class="btn black-background">버튼</button>
@@ -273,14 +271,13 @@ const highlighter = (code) => {
             </div>
             <div class="row">
 
-              <p>전화번호:<a role="button" id="infoButton_map" class=" text-info mt-md-0 m-1">054-933-2875</a> </p>
+              <p>전화번호:<a role="button" class=" text-info mt-md-0 m-1">054-933-2875</a> </p>
             </div>
 
           </div>
           <div class="mt-md-0">
 
-            <a role="button" id="infoButton_map" class=" text-info mt-md-0 m-1">큰 지도로
-              보기</a> |
+            <a role="button" id="infoButton_map" class=" text-info mt-md-0 m-1">큰 지도로 보기</a> |
             <a role="button" id="infoButton_info" class="text-info  mt-md-0 m-1">상세 정보</a>
           </div>
         </div>

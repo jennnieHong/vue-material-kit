@@ -106,7 +106,7 @@ onUnmounted(() => {
     <!-- 진료과목 -->
     <Department :data="clinicList" />
     <!-- 오시는길 -->
-    <Map />
+    <Map code="경북 성주군 성주읍 성주로 3289" />
     <!-- 병원내부사진 -->
     <!-- <PresentationPages /> -->
     <InsideViews />
