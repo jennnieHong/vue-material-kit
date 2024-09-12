@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, onUnmounted } from "vue";
+import { onMounted, onUnmounted, ref } from "vue";
 
 //example components
 import NavbarDefault from "../..//examples/navbars/NavbarDefault.vue";
@@ -38,6 +38,10 @@ import logoSketch from "@/assets/img/logos/sketch.jpg";
 import Typed from "typed.js";
 //hooks
 const body = document.getElementsByTagName("body")[0];
+
+const makeCall = () => {
+  window.location.href = 'tel:054-933-2875'
+}
 onMounted(() => {
   // body.classList.add("presentation-page");
   // body.classList.add("bg-gray-200");
@@ -67,7 +71,7 @@ onUnmounted(() => {
   <div class="container position-sticky z-index-sticky top-0">
     <div class="row">
       <!-- <div class="col"> -->
-      <NavbarDefault :sticky="true" transparent="true" darkText="true" />
+      <NavbarDefault :sticky="true" transparent="true" darkText="true" @make-call="makeCall" />
       <!-- </div> -->
     </div>
   </div>
@@ -106,7 +110,7 @@ onUnmounted(() => {
     <!-- 진료과목 -->
     <Department :data="clinicList" />
     <!-- 오시는길 -->
-    <Map code="경북 성주군 성주읍 성주로 3289" />
+    <Map code="경북 성주군 성주읍 성주로 3289" @make-call="makeCall" />
     <!-- 병원내부사진 -->
     <!-- <PresentationPages /> -->
     <InsideViews />

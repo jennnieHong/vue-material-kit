@@ -17,5 +17,6 @@ import { RouterView } from "vue-router";
 </script>
 
 <template>
+  <!-- 처음 보여줄 경로를 설정. 루트경로 -->
   <router-view />
 </template>

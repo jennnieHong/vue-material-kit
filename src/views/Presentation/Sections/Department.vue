@@ -10,6 +10,16 @@ defineProps({
       type: String,
       required: true,
     },
+    iconSvgXmlns: {
+      type: String,
+      required: false,
+
+    },
+    iconPathD: {
+      type: String,
+      required: false,
+
+    },
     description: {
       type: String,
       required: true,
@@ -64,11 +74,18 @@ export default {
       </div>
     </div>
     <div class="container mt-sm-5 mt-3">
-      <div v-for="({ heading, description, items }, index) in data"
+      <div v-for="({ heading, iconPathD, description, items }, index) in data"
         :class="`row ${index != 0 && index != -1 ? 'pt-lg-6' : ''}`" :key="heading">
         <div :class="`${col1 ?? 'col-lg-3'}`">
-          <div class=" mt-5 ps-2" style="top: 100px">
-            <h3>{{ heading }}</h3>
+          <div class="row mt-5 ps-2" style="top: 100px">
+            <svg class="col-3" v-if="iconPathD" xmlns="http://www.w3.org/2000/svg" height="50px"
+              viewBox="0 -960 960 960" width="50px" fill="#5f6368">
+              <path :d="iconPathD" />
+            </svg>
+
+            <div class="col-9">
+              <h3>{{ heading }}</h3>
+            </div>
             <h6 class="text-secondary font-weight-normal pe-3">
               {{ description }}
             </h6>

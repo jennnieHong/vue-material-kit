@@ -20,7 +20,7 @@ import ct from '@/assets/img/myImages/ct.jpg';
 import mold from '@/assets/img/myImages/mold.jpg';
 import moldapply from '@/assets/img/myImages/moldapply.jpg';
 import cavity from '@/assets/img/myImages/cavity.jpg';
-import wisdomTooth from '@/assets/img/myImages/wisdom-tooth.jpg';
+import wisdomTooth from '@/assets/img/myImages/wisdom-tooth.jpg';//사랑니 발치
 
 //dep
 import Typed from "typed.js";

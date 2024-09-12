@@ -20,7 +20,7 @@ import ct from '@/assets/img/myImages/ct.jpg';
 import mold from '@/assets/img/myImages/mold.jpg';
 import moldapply from '@/assets/img/myImages/moldapply.jpg';
 import cavity from '@/assets/img/myImages/cavity.jpg';
-import rootCanal from '@/assets/img/myImages/rootCanal.jpg';
+import rootCanal from '@/assets/img/myImages/rootCanal.jpg';//신경치료
 
 //dep
 import Typed from "typed.js";

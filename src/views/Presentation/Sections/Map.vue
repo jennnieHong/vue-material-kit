@@ -38,6 +38,8 @@ const props = defineProps({
 
 });
 
+const emit = defineEmits(['make-call']);
+
 // 상태 설정
 const isTransparent = ref(props.transparent);
 const isMobile = ref(false);
@@ -121,13 +123,7 @@ const initMap = () => {
     });
 
     // 커스텀 오버레이의 내용 (HTML로 작성)
-    const content = `
-        <div class="customoverlay">
-          <span class="title">매장 이름</span>
-          <button id="infoButton_map" class="info-button">큰 지도 보기</button>
-          <button id="infoButton_find" class="info-button">길찾기</button>
-        </div>
-      `;
+    const content = ``;
 
     // 커스텀 오버레이 생성
     const customOverlay = new kakao.maps.CustomOverlay({
@@ -166,6 +162,10 @@ const initMap = () => {
     addMarkerAndInfo(map, company);
   });
 }
+const handleMakeCall = () => {
+  emit('make-call');//부모로 전달
+}
+
 onMounted(() => {
   initMap();
 })
@@ -178,18 +178,20 @@ const copy = async (event) => {
   try {
     await toClipboard(editorCode.value);
     const el = event.target.parentElement;
+    console.log("el========");
+    console.log(el);
     var alert = document.createElement("div");
     alert.classList.add(
       "alert",
-      "alert-success",
+      "alert-dark",
       "position-absolute",
-      "top-5",
+      // "top-1",
       "border-0",
       "text-white",
       "w-25",
       "end-0",
       "start-0",
-      "mt-2",
+      // "mt-2",
       "mx-auto",
       "py-2",
       "z-index-2"
@@ -199,9 +201,9 @@ const copy = async (event) => {
     alert.style.transition = ".35s ease";
     setTimeout(function () {
       alert.style.transform = "translate3d(0px, 20px, 0px)";
-      alert.style.setProperty("opacity", "1", "important");
+      alert.style.setProperty("opacity", "0.7", "important");
     }, 100);
-    alert.innerHTML = "Code successfully copied!";
+    alert.innerHTML = "복사되었습니다!";
     el.parentElement.appendChild(alert);
     setTimeout(function () {
       alert.style.transform = "translate3d(0px, 0px, 0px)";
@@ -225,22 +227,22 @@ const highlighter = (code) => {
 
   <div class="container">
     <div class="row">
-      <div class="row justify-content-center text-center my-sm-5">
+      <div class="row justify-content-center text-center ">
         <div class="col-lg-12 tab-content tab-space">
           <!-- <MaterialBadge color="success" class="mb-3">진료과목</MaterialBadge> -->
 
-          <h2 class="text-dark mb-0">찾아오시는 길</h2>
-          <p class="text-dark opacity-8 mb-0 mt-3">
-            경북 성주군 성주읍 성주로 3289, 더갤럭시빌딩 2층<br />
-            성주군 종합사회복지관, 성주국민체육센터 부근
-          </p>
-          <div class="position-relative p-4 pb-2">
+          <h2 class="text-dark">찾아오시는 길</h2>
+          <div v-if="isMobile">
 
-            <a class="btn btn-sm bg-gradient-dark  mt-3 z-index-3" :class="{ 'position-absolute end-4': !isMobile }"
-              @click="copy($event)" href="javascript:;"><i class="fas fa-copy text-sm me-1"></i> 주소복사</a>
+            <p class="text-dark opacity-8 mb-0 mt-3">
+              경북 성주군 성주읍 성주로 3289, 더갤럭시빌딩 2층<br />
+              성주군 종합사회복지관, 성주국민체육센터 부근
+            </p>
+            <a class="btn btn-sm bg-gradient-dark  mt-3 z-index-3 " @click="copy($event)" href="javascript:;"><i
+                class="fas fa-copy text-sm me-1"></i> 주소복사</a>
+
           </div>
         </div>
-        <button class="btn black-background">버튼</button>
 
 
         <!-- <View title="gggs Simple" :code="badgesSimpleCode" id="badges-simple">
@@ -249,19 +251,26 @@ const highlighter = (code) => {
       </div>
     </div>
   </div>
-  <section class=" position-relative bg-gradient-light mx-n3" id="map">
-    <!-- 링크 버튼을 넣을 배경 -->
-    <div class="container mt-3">
-      <div class="row">
+  <div class="container">
+  </div>
 
-        <div class="col-3 text-left bg-white z-index-3 shadow-dark">
-          <div class="row p-1">
+  <section class=" position-relative bg-gradient-light mx-n3 bg-white">
+
+
+  </section>
+  <section class=" position-relative bg-gradient-light mx-n3 height-400">
+    <!-- 링크 버튼을 넣을 배경 -->
+    <div class="container position-relative" style="z-index: 2;">
+
+      <div v-if="!isMobile" class="row">
+        <div class="text-left bg-white z-index-3 shadow-dark position-absolute col-3 " :class="{ '': !isMobile }"
+          style=" top: 20px; left: 20px; background-color: rgba(255, 255, 255, 0.8); border-radius: 8px;">
+          <div class="row">
             <div class="col-md-9">
-              <h6>서울온정치과의원</h6>
-              <p>경북 성주군 성주읍 성주로 3289, 더갤럭시빌딩 2층</p>
+              <h6>서울온정치과의원111</h6>
+              <span>경북 성주군 성주읍 성주로 3289, 더갤럭시빌딩 2층</span>
             </div>
             <div role="button" class="col-md-3" id="infoButton_find">
-
               <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px"
                 fill="#1A73E8">
                 <path
@@ -270,20 +279,78 @@ const highlighter = (code) => {
               <a class="text-info">길찾기</a>
             </div>
             <div class="row">
-
               <p>전화번호:<a role="button" class=" text-info mt-md-0 m-1">054-933-2875</a> </p>
             </div>
-
           </div>
           <div class="mt-md-0">
-
             <a role="button" id="infoButton_map" class=" text-info mt-md-0 m-1">큰 지도로 보기</a> |
             <a role="button" id="infoButton_info" class="text-info  mt-md-0 m-1">상세 정보</a>
           </div>
         </div>
       </div>
     </div>
+    <div id="map" :class="{ 'position-relative ': isMobile }" style="z-index: 1;">
+      <!-- Your map content here -->
+    </div>
   </section>
+  <div v-if="isMobile" class="container" style="z-index: 2;">
+    <div class="row  my-2">
+      <div class="row  display-flex justify-content-center my-sm-5 gap-1 ">
+        <div class="container">
+          <div class="row g-1 text-center">
+            <div class="col-3 " id="infoButton_find">
+              <button class="btn w-100" style="background-color: black;">
+                <svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+                  <path
+                    d="M440-80v-200q0-56-17-83t-45-53l57-57q12 11 23 23.5t22 26.5q14-19 28.5-33.5T538-485q38-35 69-81t33-161l-63 63-57-56 160-160 160 160-56 56-64-63q-2 143-44 203.5T592-425q-32 29-52 56.5T520-280v200h-80ZM248-633q-4-20-5.5-44t-2.5-50l-64 63-56-56 160-160 160 160-57 56-63-62q0 21 2 39.5t4 34.5l-78 19Zm86 176q-20-21-38.5-49T263-575l77-19q10 27 23 46t28 34l-57 57Z" />
+                </svg>
+                <div class="row">
+                  <a class="text-white">길찾기</a>
+                </div>
+              </button>
+            </div>
+            <div class="col-3" id="infoButton_map">
+              <button class="btn w-100" style="background-color: black;">
+
+                <svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+                  <path
+                    d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z" />
+                </svg>
+                <div class="row">
+                  <a class="text-white">큰지도로</a>
+                </div>
+              </button>
+            </div>
+            <div class="col-3" id="infoButton_info">
+              <button class="btn w-100" style="background-color: black;">
+
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+                  <path
+                    d="M480-680q-33 0-56.5-23.5T400-760q0-33 23.5-56.5T480-840q33 0 56.5 23.5T560-760q0 33-23.5 56.5T480-680Zm-60 560v-480h120v480H420Z" />
+                </svg>
+                <div class="row">
+                  <a class="text-white">상세정보</a>
+                </div>
+              </button>
+            </div>
+            <div class="col-3" @click="handleMakeCall">
+              <button class="btn w-100" style="background-color: black;">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+                  <path
+                    d="M798-120q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z" />
+                </svg>
+                <div class="row">
+                  <a class="text-white">전화걸기</a>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
 </template>
 <style scoped>
 #map {
