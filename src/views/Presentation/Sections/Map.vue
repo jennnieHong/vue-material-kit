@@ -138,22 +138,31 @@ const initMap = () => {
 
 
     // 버튼 클릭 이벤트 추가 (Vue 방식이 아닌 일반 JavaScript 이벤트)
-    setTimeout(() => {
-      document.getElementById("infoButton_map").addEventListener("click", () => {
-        // 새 창을 열어 길찾기
-        // window.open("https://map.kakao.com/?urlX=791955&urlY=674386&urlLevel=3&itemId=639674040&q=%EC%84%9C%EC%9A%B8%EC%98%A8%EC%A0%95%EC%B9%98%EA%B3%BC&srcid=%2C&rtTypes=%2C&map_type=TYPE_MAP", "_blank");
-        window.open("https://map.kakao.com/link/map/639674040", "_blank");
-      });
-      document.getElementById("infoButton_find").addEventListener("click", () => {
-        // 새 창을 열어 지도
-        window.open("https://map.kakao.com/link/to/639674040", "_blank");
-      });
-      document.getElementById("infoButton_info").addEventListener("click", () => {
-        // 새 창을 열어 상세보기
-        window.open("https://place.map.kakao.com/639674040", "_blank");
-      });
-    }, 0); // DOM이 모두 렌더링된 후 이벤트 바인딩
+    // setTimeout(() => {
+    //   document.getElementById("infoButton_map").addEventListener("click", () => {
+    //     // 새 창을 열어 길찾기
+    //     // window.open("https://map.kakao.com/?urlX=791955&urlY=674386&urlLevel=3&itemId=639674040&q=%EC%84%9C%EC%9A%B8%EC%98%A8%EC%A0%95%EC%B9%98%EA%B3%BC&srcid=%2C&rtTypes=%2C&map_type=TYPE_MAP", "_blank");
+    //     window.open("https://map.kakao.com/link/map/639674040", "_blank");
+    //   });
+    //   document.getElementById("infoButton_find").addEventListener("click", () => {
+    //     // 새 창을 열어 지도
+    //     window.open("https://map.kakao.com/link/to/639674040", "_blank");
+    //   });
+    //   document.getElementById("infoButton_info").addEventListener("click", () => {
+    //     // 새 창을 열어 상세보기
+    //     window.open("https://place.map.kakao.com/639674040", "_blank");
+    //   });
+    // }, 0); // DOM이 모두 렌더링된 후 이벤트 바인딩
 
+    document.getElementById("infoButton_map").addEventListener("click", () => {
+      window.open("https://map.kakao.com/link/map/639674040", "_blank");
+    });
+    document.getElementById("infoButton_find").addEventListener("click", () => {
+      window.open("https://map.kakao.com/link/to/639674040", "_blank");
+    });
+    document.getElementById("infoButton_info").addEventListener("click", () => {
+      window.open("https://place.map.kakao.com/639674040", "_blank");
+    });
 
   }
 
@@ -166,6 +175,15 @@ const handleMakeCall = () => {
   emit('make-call');//부모로 전달
 }
 
+const openMap = () => {
+  window.open("https://map.kakao.com/link/map/639674040", "_blank");
+};
+const openFind = () => {
+  window.open("https://map.kakao.com/link/to/639674040", "_blank");
+};
+const openInfo = () => {
+  window.open("https://place.map.kakao.com/639674040", "_blank");
+};
 onMounted(() => {
   initMap();
 })
@@ -295,55 +313,53 @@ const highlighter = (code) => {
   </section>
   <div v-if="isMobile" class="container" style="z-index: 2;">
     <div class="row  my-2">
-      <div class="row  display-flex justify-content-center my-sm-5 gap-1 ">
-        <div class="container">
-          <div class="row g-1 text-center">
-            <div class="col-3 " id="infoButton_find">
-              <button class="btn w-100" style="background-color: black;">
-                <svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 -960 960 960" width="24px" fill="#fff">
-                  <path
-                    d="M440-80v-200q0-56-17-83t-45-53l57-57q12 11 23 23.5t22 26.5q14-19 28.5-33.5T538-485q38-35 69-81t33-161l-63 63-57-56 160-160 160 160-56 56-64-63q-2 143-44 203.5T592-425q-32 29-52 56.5T520-280v200h-80ZM248-633q-4-20-5.5-44t-2.5-50l-64 63-56-56 160-160 160 160-57 56-63-62q0 21 2 39.5t4 34.5l-78 19Zm86 176q-20-21-38.5-49T263-575l77-19q10 27 23 46t28 34l-57 57Z" />
-                </svg>
-                <div class="row">
-                  <a class="text-white">길찾기</a>
-                </div>
-              </button>
-            </div>
-            <div class="col-3" id="infoButton_map">
-              <button class="btn w-100" style="background-color: black;">
+      <div class="container">
+        <div class="row g-1 text-center">
+          <div class="col-6 " id="infoButton_find" @click="openFind">
+            <button class="btn w-100" style="background-color: black;">
+              <svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+                <path
+                  d="M440-80v-200q0-56-17-83t-45-53l57-57q12 11 23 23.5t22 26.5q14-19 28.5-33.5T538-485q38-35 69-81t33-161l-63 63-57-56 160-160 160 160-56 56-64-63q-2 143-44 203.5T592-425q-32 29-52 56.5T520-280v200h-80ZM248-633q-4-20-5.5-44t-2.5-50l-64 63-56-56 160-160 160 160-57 56-63-62q0 21 2 39.5t4 34.5l-78 19Zm86 176q-20-21-38.5-49T263-575l77-19q10 27 23 46t28 34l-57 57Z" />
+              </svg>
+              <div class="row">
+                <a class="text-white">길찾기</a>
+              </div>
+            </button>
+          </div>
+          <div class="col-6" id="infoButton_map" @click="openMap">
+            <button class="btn w-100" style="background-color: black;">
 
-                <svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 -960 960 960" width="24px" fill="#fff">
-                  <path
-                    d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z" />
-                </svg>
-                <div class="row">
-                  <a class="text-white">큰지도로</a>
-                </div>
-              </button>
-            </div>
-            <div class="col-3" id="infoButton_info">
-              <button class="btn w-100" style="background-color: black;">
+              <svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+                <path
+                  d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z" />
+              </svg>
+              <div class="row">
+                <a class="text-white">큰지도로</a>
+              </div>
+            </button>
+          </div>
+          <div class="col-6" id="infoButton_info" @click="openInfo">
+            <button class="btn w-100" style="background-color: black;">
 
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
-                  <path
-                    d="M480-680q-33 0-56.5-23.5T400-760q0-33 23.5-56.5T480-840q33 0 56.5 23.5T560-760q0 33-23.5 56.5T480-680Zm-60 560v-480h120v480H420Z" />
-                </svg>
-                <div class="row">
-                  <a class="text-white">상세정보</a>
-                </div>
-              </button>
-            </div>
-            <div class="col-3" @click="handleMakeCall">
-              <button class="btn w-100" style="background-color: black;">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
-                  <path
-                    d="M798-120q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z" />
-                </svg>
-                <div class="row">
-                  <a class="text-white">전화걸기</a>
-                </div>
-              </button>
-            </div>
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+                <path
+                  d="M480-680q-33 0-56.5-23.5T400-760q0-33 23.5-56.5T480-840q33 0 56.5 23.5T560-760q0 33-23.5 56.5T480-680Zm-60 560v-480h120v480H420Z" />
+              </svg>
+              <div class="row">
+                <a class="text-white">상세정보</a>
+              </div>
+            </button>
+          </div>
+          <div class="col-6" @click="handleMakeCall">
+            <button class="btn w-100" style="background-color: black;">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+                <path
+                  d="M798-120q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z" />
+              </svg>
+              <div class="row">
+                <a class="text-white">전화걸기</a>
+              </div>
+            </button>
           </div>
         </div>
       </div>
