@@ -31,6 +31,7 @@ import imgDropdowns from "@/assets/img/dropdowns.jpg";
 
 import navigation from "@/assets/img/myImages/navigation.jpg"; //네비게이션
 import sinus from "@/assets/img/myImages/sinus.jpg"; //상악동
+import insurance from "@/assets/img/myImages/insurance.jpg"; //보험
 import consciousSedation from "@/assets/img/myImages/consciousSedation.jpg"; //의식하진정요법
 import cavity from "@/assets/img/myImages/cavity.jpg"; //충치치료
 import rootCanal from "@/assets/img/myImages/rootCanal.jpg"; //신경치료
@@ -64,7 +65,7 @@ export default [
         pro: false,
       },
       {
-        image: imgPricing,
+        image: insurance,
         title: "보험 임플란트",
         subtitle: "임플란트 비용의 30%만 부담하여 치료받으실 수 있습니다.",
         route: "insurance",

@@ -19,7 +19,7 @@ import xray from '@/assets/img/myImages/x-ray.jpg';
 import ct from '@/assets/img/myImages/ct.jpg';
 import mold from '@/assets/img/myImages/mold.jpg';
 import moldapply from '@/assets/img/myImages/moldapply.jpg';
-import cavity from '@/assets/img/myImages/cavity.jpg';
+import cavity from '@/assets/img/myImages/cavity.jpg';//충치치료
 import decay from '@/assets/img/myImages/decay.png';
 
 //dep

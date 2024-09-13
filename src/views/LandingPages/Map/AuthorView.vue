@@ -9,7 +9,8 @@ import Footer from "@/examples/footers/FooterDefault.vue";
 import Profile from "./Sections/AuthorProfile.vue";
 import Posts from "./Sections/AuthorPosts.vue";
 import Contact from "./Sections/AuthorContact.vue";
-
+import Map from "../../../views/Presentation/Sections/Map.vue"; //오시는길 --
+//D:/workspace/dentalClinic/vue-material-kit/src/views/Presentation/Sections/Map.vue
 // image
 import image from "@/assets/img/city-profile.jpg";
 </script>

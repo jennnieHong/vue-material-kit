@@ -5,6 +5,7 @@ import { onMounted } from "vue";
 import MaterialAvatar from "@/components/MaterialAvatar.vue";
 import MaterialButton from "@/components/MaterialButton.vue";
 
+import Map from "../../../../views/Presentation/Sections/Map.vue"; //오시는길 --
 // image
 import profilePic from "@/assets/img/bruce-mars.jpg";
 
@@ -16,6 +17,7 @@ onMounted(() => {
 </script>
 <template>
   <section class="py-sm-7 py-5 position-relative">
+
     <div class="container">
       <div class="row">
         <div class="col-12 mx-auto">
@@ -24,19 +26,20 @@ onMounted(() => {
               <MaterialAvatar size="xxl" class="shadow-xl position-relative z-index-2" :image="profilePic"
                 alt="Avatar" />
             </div>
+
           </div>
+
           <div class="row py-7">
+
+            <Map code="경북 성주군 성주읍 성주로 3289" @make-call="makeCall" />
             <div class="col-lg-7 col-md-7 z-index-2 position-relative px-md-2 px-sm-5 mx-auto">
               <div class="d-flex justify-content-between align-items-center mb-2">
-                <h3 class="mb-0">오시는 길</h3>
                 <!-- <div class="d-block">
                   <MaterialButton class="text-nowrap mb-0" variant="outline" color="success" size="sm">Follow
                   </MaterialButton>
                 </div> -->
               </div>
               <p class="text-lg mb-0">
-                <img class="max-width-50 w-100 position-relative z-index-2" src="@/assets/img/myImages/map.jpg"
-                  alt="image">
                 경북 성주군 성주읍 성주로 3289, 더갤럭시빌딩 2층 <br />
                 성주군 종합사회복지관, 성주국민체육센터 부근<br /><br />
                 ✔ 버스이용안내<br />

@@ -20,7 +20,7 @@ import ct from '@/assets/img/myImages/ct.jpg';
 import mold from '@/assets/img/myImages/mold.jpg';
 import moldapply from '@/assets/img/myImages/moldapply.jpg';
 import smile from '@/assets/img/myImages/smile.jpg';
-import crown from '@/assets/img/myImages/crown.jpg';
+import crown from '@/assets/img/myImages/crown.jpg';//크라운 보철
 import pfm from '@/assets/img/myImages/pfm.jpg';
 import gold from '@/assets/img/myImages/gold.jpg';
 import zircon from '@/assets/img/myImages/zircon.jpg';

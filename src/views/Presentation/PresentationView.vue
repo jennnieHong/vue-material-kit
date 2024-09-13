@@ -79,7 +79,7 @@ onUnmounted(() => {
     <div class="page-header min-vh-75 opacity-7" :style="`background-image: url(${vueMkHeader})`" loading="lazy">
       <div class="container">
         <div class="row">
-          <div class="col-lg-6 text-dark text-left mx-auto position-relative mt-10">
+          <div class="col-lg-6 text-dark text-left mx-auto position-relative ">
             <!-- <h1 class="text-white pt-3 mt-n5 me-2" :style="{ display: 'inline-block ' }"> -->
             <!-- <h1 class="pt-3 mt-n5" :style="{ display: 'inline-block ', marginLeft: '50px' }">
               서울온정치과
