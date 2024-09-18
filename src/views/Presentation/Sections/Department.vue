@@ -19,6 +19,7 @@ defineProps({
       type: String,
       required: false,
 
+
     },
     description: {
       type: String,

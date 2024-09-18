@@ -72,6 +72,7 @@ onUnmounted(() => {
     <div class="row">
       <!-- <div class="col"> -->
       <NavbarDefault :sticky="true" transparent="true" darkText="true" @make-call="makeCall" />
+
       <!-- </div> -->
     </div>
   </div>
@@ -113,7 +114,7 @@ onUnmounted(() => {
     <Map code="경북 성주군 성주읍 성주로 3289" @make-call="makeCall" />
     <!-- 병원내부사진 -->
     <!-- <PresentationPages /> -->
-    <InsideViews />
+    <!-- <InsideViews /> -->
     <!-- <BuiltByDevelopers /> -->
 
     <!-- <div class="container">

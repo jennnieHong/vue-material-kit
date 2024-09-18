@@ -21,15 +21,15 @@ import faviconPath from "@/assets/img/favicon2.png";
 const props = defineProps({
   id: {
     type: String,
-    required: true,
+    required: false,
   },
   code: {
     type: String,
-    required: true,
+    required: false,
   },
   title: {
     type: String,
-    required: true,
+    required: false,
   },
   height: {
     type: String,

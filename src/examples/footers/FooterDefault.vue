@@ -1,6 +1,6 @@
 <script setup>
 import { RouterLink } from "vue-router";
-import logoDark from "@/assets/img/logo-ct-dark.png";
+import logoDark from "@/assets/img/logo.png";
 defineProps({
   brand: {
     type: Object,
@@ -135,12 +135,12 @@ defineProps({
             <h6 class="font-weight-bolder mb-4">{{ brand.name }}</h6>
           </div>
           <div>
-            <ul class="d-flex flex-row ms-n3 nav">
-              <li class="nav-item" v-for="{ icon, link } of socials" :key="link">
-                <a class="nav-link pe-1" :href="link" target="_blank" v-html="icon">
-                </a>
-              </li>
-            </ul>
+            <!--<ul class="d-flex flex-row ms-n3 nav">-->
+            <!--  <li class="nav-item" v-for="{ icon, link } of socials" :key="link">-->
+            <!--    <a class="nav-link pe-1" :href="link" target="_blank" v-html="icon">-->
+            <!--    </a>-->
+            <!--  </li>-->
+            <!--</ul>-->
           </div>
         </div>
         <div class="col-md-7 mb-4 ms-auto">
@@ -163,9 +163,13 @@ defineProps({
                 서울온정치과의원 | 경북 성주군 성주읍 성주로 3289 더갤럭시빌딩 2층 (우편번호: 40031)<br />
                 대표자명 | 배인재<br />
                 사업자등록번호 | 106-64-00616 <br />
-                TEL | 배인재<br />
-                FAX | 106-64-00616 <br />
-                서울온정치과 블로그 | 대한통합치과학회 <br />
+                TEL | 054-933-2875<br />
+                FAX | 054-933-2874<br />
+                <div class="">
+                  <a role="button" class="nav-link d-inline"  href="https://blog.naver.com/onjung_dental" target="_blank">서울온정치과 블로그 </a>| <a class="nav-link d-inline" href="https://www.kagd.org" target="_blank">대한통합치과학회</a><br />
+                </div>
+                
+                
                 <!-- 
                 {{ new Date().getFullYear() }}
                 Material Kit by

@@ -7,6 +7,7 @@ import { useWindowsWidth } from "../../assets/js/useWindowsWidth";
 import ArrDark from "@/assets/img/down-arrow-dark.svg";
 import downArrow from "@/assets/img/down-arrow.svg";
 import DownArrWhite from "@/assets/img/down-arrow-white.svg";
+import favicon from '@/assets/img/logo.png';
 
 const emit = defineEmits(['make-call']);
 const props = defineProps({
@@ -156,9 +157,13 @@ onBeforeUnmount(() => {
       'container w-100': true,
       'px-0': isMobile
     }">
-      <RouterLink class="navbar-brand d-none-block" :class=getTextColor() :to="{ name: 'presentation' }" rel="tooltip"
-        title="Designed and Coded by Creative Tim" data-placement="bottom">
-        서울온정치과
+      <!-- <div class="page-header min-vh-35" :style="{ backgroundImage: `url(${cavity})` }"></div> -->
+      <RouterLink class="navbar-brand d-none-block font-weight-bolder  " :class=getTextColor() :to="{ name: 'presentation' }" rel="tooltip"
+      title="Designed and Coded by Creative Tim" data-placement="bottom">
+      <img rel="icon" type="image/png" :src=favicon :width="40" :height="40" class="mb-3"/>
+        
+        
+        <sapn class="text-2xl">서울온정치과</sapn>
       </RouterLink>
       <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse"
         data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
@@ -493,7 +498,7 @@ onBeforeUnmount(() => {
               </div>
             </div>
           </li>
-          <li class="nav-item dropdown dropdown-hover mx-2">
+          <!-- <li class="nav-item dropdown dropdown-hover mx-2">
             <a role="button" class="nav-link ps-2 d-flex cursor-pointer align-items-center" :class="getTextColor()"
               id="dropdownMenuPages" data-bs-toggle="dropdown" aria-expanded="false">
               <i class="material-icons opacity-6 me-2 text-md" :class="getTextColor()">dashboard</i>
@@ -510,9 +515,9 @@ onBeforeUnmount(() => {
                       <RouterLink :to="{ name: 'consultation' }" class="dropdown-item border-radius-md">
                         <span>상담문의</span>
                       </RouterLink>
-                      <!-- <RouterLink :to="{ name: 'orthodontic' }" class="dropdown-item border-radius-md"> -->
-                      <!-- <button @click="handleMakeCall" class="dropdown-item border-radius-md"><span>전화문의</span></button> -->
-                      <!-- </RouterLink> -->
+                      <RouterLink :to="{ name: 'orthodontic' }" class="dropdown-item border-radius-md">
+                      <button @click="handleMakeCall" class="dropdown-item border-radius-md"><span>전화문의</span></button>
+                      </RouterLink>
 
 
                     </div>
@@ -524,12 +529,12 @@ onBeforeUnmount(() => {
                   <span>상담문의</span>
                 </RouterLink>
 
-                <!-- <RouterLink :to="{ name: 'orthodontic' }" class="dropdown-item border-radius-md">
+                <RouterLink :to="{ name: 'orthodontic' }" class="dropdown-item border-radius-md">
                   <span>전화문의</span>
-                </RouterLink> -->
+                </RouterLink>
               </div>
             </div>
-          </li>
+          </li> -->
           <!-- <li class="nav-item dropdown dropdown-hover mx-2">
             <a role="button" class="nav-link ps-2 d-flex cursor-pointer align-items-center" :class="getTextColor()"
               id="dropdownMenuBlocks" data-bs-toggle="dropdown" aria-expanded="false">
