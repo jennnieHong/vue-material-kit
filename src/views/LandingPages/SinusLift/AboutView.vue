@@ -13,14 +13,17 @@ import DefaultFooter from "@/examples/footers/FooterDefault.vue";
 
 //image
 import bg0 from "@/assets/img/myImages/implant.jpg";
-import sinus from "@/assets/img/myImages/sinus.jpg";
-import sinusInvolvement from "@/assets/img/myImages/sinusInvolvement.jpg";
+import sinus from "@/assets/img/myImages/sinus_def.png";//상악동거상술이란
+import sinusInvolvement from "@/assets/img/myImages/sinusInvolvement2.png";//상악동거상술
 import implantImage from '@/assets/img/myImages/implant.jpg';
 import mapImage from '@/assets/img/myImages/map.jpg';
 import xray from '@/assets/img/myImages/x-ray.jpg';
 import sinus1 from "@/assets/img/myImages/sinus1.jpg";
 import sinus2 from "@/assets/img/myImages/sinus2.jpg";
-import sinus3 from "@/assets/img/myImages/sinus3.png";
+import sinus_recom2 from "@/assets/img/myImages/sinus_recom2.png";//추천대상-오랜치아상실
+import sinus3 from "@/assets/img/myImages/sinus_recom3.png";//추천대상-치주질환발치
+import sinus_recom3 from "@/assets/img/myImages/sinus_recom3.png";//추천대상-치주질환발치
+import sinus_recom4 from "@/assets/img/myImages/sinus_recom4.png";//추천대상-틀니오랜사용
 import sinus4 from "@/assets/img/myImages/sinus4.png";
 import ct from '@/assets/img/myImages/ct.jpg';
 import mold from '@/assets/img/myImages/mold.jpg';
@@ -44,9 +47,9 @@ import setNavPills from "@/assets/js/nav-pills";
 // 리스트 데이터
 const itemList = [
   { id: 1, title: '뼈의 두께가 부족', content: '상악동이 많이 내려와 뼈의 두께가 부족한 경우', img: sinus1 },
-  { id: 2, title: '오랜 치아 상실', content: '치아를 상실한 지 오랜 시간이 지난 경우', img: sinus2 },
-  { id: 3, title: '잇몸질환으로 발치', content: '잇몸질환으로 발치한 후 오랜 시간 방치한 경우', img: sinus3 }, // 이미지 없는 경우
-  { id: 4, title: '틀니의 오랜 사용', content: '오랜 시간동안 틀니를 사용해 뼈가 퇴축된 경우', img: sinus4 }, // 이미지 없는 경우
+  { id: 2, title: '오랜 치아 상실', content: '치아를 상실한 지 오랜 시간이 지난 경우', img: sinus_recom2 },
+  { id: 3, title: '잇몸질환으로 발치', content: '잇몸질환으로 발치한 후 오랜 시간 방치한 경우', img: sinus_recom3 }, // 이미지 없는 경우
+  { id: 4, title: '틀니의 오랜 사용', content: '오랜 시간동안 틀니를 사용해 뼈가 퇴축된 경우', img: sinus_recom4 }, // 이미지 없는 경우
 ];
 
 // 템플릿 리터럴을 자바스크립트 변수에 할당
@@ -128,7 +131,7 @@ onUnmounted(() => {
 
     <MyNewsletter title="상악동이란?" content="광데에서 윗턱뼈꺼지 이어진 부분의 빈 공간" :img=sinus></MyNewsletter>
     <MyNewsletter :title="title" :content="content" :img=sinusInvolvement></MyNewsletter>
-    <MyView title="치료 추천 대상" :items="itemList" height="300">
+    <MyView title="치료 추천 대상" :items="itemList" height="400">
     </MyView>
   </div>
   <DefaultFooter />

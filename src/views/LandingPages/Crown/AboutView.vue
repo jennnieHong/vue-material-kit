@@ -27,6 +27,10 @@ import zircon from '@/assets/img/myImages/zircon.jpg';
 // import crown from '@/assets/img/myImages/crown.jpg';
 // import crown from '@/assets/img/myImages/crown.jpg';
 // import crown from '@/assets/img/myImages/crown.jpg';
+import crown_rec1 from '@/assets/img/myImages/crown_rec1.png';//크라운 보철
+import crown_rec2 from '@/assets/img/myImages/crown_rec2.png';//크라운 보철
+import crown_rec3 from '@/assets/img/myImages/crown_rec3.png';//크라운 보철
+
 
 //dep
 import Typed from "typed.js";
@@ -46,12 +50,15 @@ import setNavPills from "@/assets/js/nav-pills";
 // 리스트 데이터
 const itemTitle = "크라운이 필요한 경우";
 const itemList = [
-  { id: 1, title: '1.출혈', content: '심한 충치로 인해 치아가 많이 손상된 경우', },
-  { id: 2, title: '2.통증', content: '치아가 50%이상 깨진 경우', },
-  { id: 3, title: '3.구취', content: '신경치료를 받은 경우', },
-  { id: 4, title: '4.붓기', content: '잇몸이 주기적으로 붓는 경우', },
-  { id: 5, title: '5.흔들림', content: '이가 흔들리거나 사이가 벌어진 경우', },
-  { id: 6, title: '6.고름', content: '잇몸에서 고름이 나오는 경우', },
+  // { id: 1, title: '1.출혈', content: '심한 충치로 인해 치아가 많이 손상된 경우', },
+  // { id: 2, title: '2.통증', content: '치아가 50%이상 깨진 경우', },
+  // { id: 3, title: '3.구취', content: '신경치료를 받은 경우', },
+  // { id: 4, title: '4.붓기', content: '잇몸이 주기적으로 붓는 경우', },
+  // { id: 5, title: '5.흔들림', content: '이가 흔들리거나 사이가 벌어진 경우', },
+  // { id: 6, title: '6.고름', content: '잇몸에서 고름이 나오는 경우', },
+  { id: 1, title: '1.신경치료', content: '신경치료를 받은 치아', img: crown_rec1 },
+  { id: 2, title: '2.충치', content: '심한충치로 인해 치아손상', img: crown_rec2 },
+  { id: 3, title: '3.기타', content: '치아가 50%이상 깨진 경우', img: crown_rec3 },
 ];
 const itemTitle2 = "크라운 재료";
 const itemList2 = [
@@ -135,7 +142,7 @@ onUnmounted(() => {
     <!-- <Newsletter /> -->
 
     <MyNewsletter :title="title" :content="content" :img=crown></MyNewsletter>
-    <MyView :title="itemTitle" :items="itemList" height="100" :part1Ratio="3"> </MyView>
+    <MyView :title="itemTitle" :items="itemList" height="300" :part1Ratio="3"> </MyView>
     <MyView :title="itemTitle2" :items="itemList2" height="300" :part1Ratio="4"> </MyView>
   </div>
   <DefaultFooter />

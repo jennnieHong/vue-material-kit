@@ -21,6 +21,10 @@ import mold from '@/assets/img/myImages/mold.jpg';
 import moldapply from '@/assets/img/myImages/moldapply.jpg';
 import cavity from '@/assets/img/myImages/cavity.jpg';
 import wisdomTooth from '@/assets/img/myImages/wisdom-tooth.jpg';//사랑니 발치
+import wisdom_rec1 from '@/assets/img/myImages/wisdom_rec1.png';//누워있는 경우
+import wisdom_rec2 from '@/assets/img/myImages/wisdom_rec2.png';//염증이 생긴 경우
+import wisdom_rec3 from '@/assets/img/myImages/wisdom_rec3.png';//잇몸이 덮고 있는 경우
+import wisdom_rec4 from '@/assets/img/myImages/wisdom_rec4.png';//칫솔이 닿지 않는경우
 
 //dep
 import Typed from "typed.js";
@@ -40,10 +44,10 @@ import setNavPills from "@/assets/js/nav-pills";
 // 리스트 데이터
 const itemTitle = "사랑니 발치를 해야 하는 이유";
 const itemList = [
-  { id: 1, title: '1.누워 있는 경우', content: '누워 있는 경우 사랑니 주변 치아를 밀어내어 주변 어금니까지 비스듬히 기울어질 수 있습니다.', },
-  { id: 2, title: '2.잇몸이 덮고 있는 경우', content: '잇몸이 덮고 있는 경우 사랑니 주변 잇몸에 염증이 생기기 쉬우며 염증이 심해질 경우 잇 몸과 볼에 부종이 생길 수 있습니다.', },
-  { id: 3, title: '3.칫솔이 닿지 않는 경우', content: '칫솔이 닿지 않는 경우 가장 안쪽에 사랑니가 위치하기 때문에 칫솔이 닿지 않으면 충치가 쉽게 발생합니다.', },
-  { id: 4, title: '4.염증이 생긴 경우', content: '염증이 생긴 경우 사랑니의 염증으로 주변 잇몸 뼈가 흡수되어 사랑니 앞에 위치한 어금니 주변 잇몸뼈까지 함께 흡수될 수 있습니다.', },
+  { id: 1, title: '1.누워 있는 경우', content: '누워 있는 경우 사랑니 주변 치아를 밀어내어 주변 어금니까지 비스듬히 기울어질 수 있습니다.', img: wisdom_rec1 },
+  { id: 2, title: '2.잇몸이 덮고 있는 경우', content: '잇몸이 덮고 있는 경우 사랑니 주변 잇몸에 염증이 생기기 쉬우며 염증이 심해질 경우 잇 몸과 볼에 부종이 생길 수 있습니다.', img: wisdom_rec3 },
+  { id: 3, title: '3.칫솔이 닿지 않는 경우', content: '칫솔이 닿지 않는 경우 가장 안쪽에 사랑니가 위치하기 때문에 칫솔이 닿지 않으면 충치가 쉽게 발생합니다.', img: wisdom_rec4 },
+  { id: 4, title: '4.염증이 생긴 경우', content: '염증이 생긴 경우 사랑니의 염증으로 주변 잇몸 뼈가 흡수되어 사랑니 앞에 위치한 어금니 주변 잇몸뼈까지 함께 흡수될 수 있습니다.', img: wisdom_rec2 },
 
 
 

@@ -7,6 +7,8 @@ import { onMounted, ref } from "vue";
 import useClipboard from "vue-clipboard3";
 import View from "../../../layouts/sections/components/View.vue";
 
+//Vue Material Kit 2 components
+import MaterialButton from "./../../../components/MaterialButton.vue";
 // import BadgesSimple from "./../components/BadgesSimple.vue";
 // images
 import emma from "@/assets/img/team-5.jpg";
@@ -35,10 +37,14 @@ const props = defineProps({
     type: String,
     default: "",
   },
+  class: {
+    type: String,
+    required: false,
+  }
 
 });
 
-const emit = defineEmits(['make-call']);
+const emit = defineEmits(['make-call', 'open-modal', 'close-modal']);
 
 // 상태 설정
 const isTransparent = ref(props.transparent);
@@ -172,7 +178,18 @@ const initMap = () => {
   });
 }
 const handleMakeCall = () => {
+  console.log("handleMakeCall from Map")
+  if (!isMobile) {
+    alert("!!")
+    return
+  }
   emit('make-call');//부모로 전달
+}
+const handleOpenModal = () => {
+
+  console.log("handleOpenModal from Map 부모로 전달")
+  emit('oepn-modal');//부모로 전달
+  console.log("handleOpenModal from Map 부모로 전달")
 }
 
 const openMap = () => {
@@ -243,6 +260,96 @@ const highlighter = (code) => {
 
 <template>
 
+  <portal to="body" @click.stop>
+    <div class="container ">
+      <div class="row mt-2 flex justify-content-center">
+        <div class="col-sm-3 col-6 ms-8">
+          <!-- Button trigger modal -->
+          <!-- <MaterialButton variant="gradient" color="success" data-bs-toggle="modal" data-bs-target="#exampleModal"
+            @click="() => { emit('open-modal') }"> -->
+          <MaterialButton variant="gradient" color="success" data-bs-toggle="modal" data-bs-target="#exampleModal"
+            @click="handleOpenModal">
+            Launch demo modal
+          </MaterialButton>
+
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">
+                    Your modal title
+                  </h5>
+                  <MaterialButton color="none" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                    @click="() => { emit('close-modal') }">
+                  </MaterialButton>
+                </div>
+                <div class="modal-body">
+                  Society has put up so many boundaries, so many limitations on
+                  what’s right and wrong that it’s almost impossible to get a pure
+                  thought out.
+                  <br /><br />
+                  It’s like a little kid, a little boy, looking at colors, and no
+                  one told him what colors are good, before somebody tells you you
+                  shouldn’t like pink because that’s for girls, or you’d instantly
+                  become a gay two-year-old.
+                </div>
+                <div class="modal-footer justify-content-between">
+                  <MaterialButton variant="gradient" color="dark" data-bs-dismiss="modal">
+                    Close
+                  </MaterialButton>
+                  <MaterialButton variant="gradient" color="success" class="mb-0">
+                    Save changes
+                  </MaterialButton>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 col-6 ms-8">
+      <!-- Button trigger modal -->
+      <MaterialButton variant="gradient" color="success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Launch demo modal
+      </MaterialButton>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">
+                Your modal title
+              </h5>
+              <MaterialButton color="none" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+              </MaterialButton>
+            </div>
+            <div class="modal-body">
+              Society has put up so many boundaries, so many limitations on
+              what’s right and wrong that it’s almost impossible to get a pure
+              thought out.
+              <br /><br />
+              It’s like a little kid, a little boy, looking at colors, and no
+              one told him what colors are good, before somebody tells you you
+              shouldn’t like pink because that’s for girls, or you’d instantly
+              become a gay two-year-old.
+            </div>
+            <div class="modal-footer justify-content-between">
+              <MaterialButton variant="gradient" color="dark" data-bs-dismiss="modal">
+                Close
+              </MaterialButton>
+              <MaterialButton variant="gradient" color="success" class="mb-0">
+                Save changes
+              </MaterialButton>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </portal>
   <div class="container">
     <div class="row">
       <div class="row justify-content-center text-center ">
@@ -275,7 +382,7 @@ const highlighter = (code) => {
       <div class=" position-relative" style="z-index: 2;">
 
         <div v-if="!isMobile" class="row">
-          <div class="text-left bg-white z-index-3 shadow-dark position-absolute col-3 " :class="{ '': !isMobile }"
+          <div class="text-left bg-white z-index-3 shadow-dark position-absolute col-3 "
             style=" top: 20px; left: 20px; background-color: rgba(255, 255, 255, 0.8); border-radius: 8px;">
             <div class="row">
               <div class="col-md-9">

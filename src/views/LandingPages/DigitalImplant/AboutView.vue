@@ -19,7 +19,7 @@ import xray from '@/assets/img/myImages/x-ray.jpg';
 import ct from '@/assets/img/myImages/ct.jpg';
 import mold from '@/assets/img/myImages/mold.jpg';
 import moldapply from '@/assets/img/myImages/moldapply.jpg';
-import navigation from '@/assets/img/myImages/navigation.jpg';
+import navigation from '@/assets/img/myImages/navigation.png';
 
 //dep
 import Typed from "typed.js";

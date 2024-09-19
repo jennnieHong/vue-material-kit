@@ -20,7 +20,12 @@ import ct from '@/assets/img/myImages/ct.jpg';
 import mold from '@/assets/img/myImages/mold.jpg';
 import moldapply from '@/assets/img/myImages/moldapply.jpg';
 import cavity from '@/assets/img/myImages/cavity.jpg';//충치치료
-import decay from '@/assets/img/myImages/decay.png';
+import decay from '@/assets/img/myImages/cavity_def.png';//충치치료 정의
+
+import cavity_material1 from "@/assets/img/myImages/cavity_material1.png";//레진
+import cavity_material2 from "@/assets/img/myImages/cavity_material2.png";//인레이
+import cavity_material3 from "@/assets/img/myImages/cavity_material3.png";//크라운
+import cavity_material4 from "@/assets/img/myImages/cavity_material4.png";//임플란트
 
 //dep
 import Typed from "typed.js";
@@ -40,10 +45,10 @@ import setNavPills from "@/assets/js/nav-pills";
 // 리스트 데이터
 const itemTitle = "충치 진행단계에 따른 치료 방법";
 const itemList = [
-  { id: 1, title: '1단계-레진', content: '치마의 가장 바깥쪽 법랑질부터 썩기 시작하며 자각 증상이 없어 간단한 레진 치료가 가능합니다.', },
-  { id: 2, title: '2단계-인레이', content: '법랑질을 뚫고 상아질까지 충치가 진행되어 시린 증상과 통증이 나타나 범위에 따라 인레이 치료가 필요합니다.', },
-  { id: 3, title: '3단계-크라운', content: '혈관이 분포된 치수까지 진행되어 극심한 통증이 발생하며 충치의 범위가 깊고 넓어 신경치료와 크라운 치료가 필요합니다.', },
-  { id: 4, title: '4단계-일플란트', content: '뿌리와 잇몸까지 손상되어 신경조작이 썩어 발치 후 임플란트 수술이 필요합니다.', },
+  { id: 1, title: '1단계-레진', content: '치마의 가장 바깥쪽 법랑질부터 썩기 시작하며 자각 증상이 없어 간단한 레진 치료가 가능합니다.', img: cavity_material1 },
+  { id: 2, title: '2단계-인레이', content: '법랑질을 뚫고 상아질까지 충치가 진행되어 시린 증상과 통증이 나타나 범위에 따라 인레이 치료가 필요합니다.', img: cavity_material2 },
+  { id: 3, title: '3단계-크라운', content: '혈관이 분포된 치수까지 진행되어 극심한 통증이 발생하며 충치의 범위가 깊고 넓어 신경치료와 크라운 치료가 필요합니다.', img: cavity_material3 },
+  { id: 4, title: '4단계-일플란트', content: '뿌리와 잇몸까지 손상되어 신경조작이 썩어 발치 후 임플란트 수술이 필요합니다.', img: cavity_material4 },
 ];
 
 // 템플릿 리터럴을 자바스크립트 변수에 할당
@@ -125,7 +130,7 @@ onUnmounted(() => {
     <!-- <Newsletter /> -->
 
     <MyNewsletter :title="title" :content="content" :img=decay></MyNewsletter>
-    <MyView :title="itemTitle" :items="itemList" height="300" :part1Ratio="5">
+    <MyView :title="itemTitle" :items="itemList" height="400" :part1Ratio="5">
     </MyView>
   </div>
   <DefaultFooter />

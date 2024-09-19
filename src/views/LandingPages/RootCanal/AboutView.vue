@@ -36,14 +36,18 @@ const body = document.getElementsByTagName("body")[0];
 
 //nav-pills
 import setNavPills from "@/assets/js/nav-pills";
+import navpills_rec1 from "@/assets/img/myImages/navpills_rec1.png";
+import navpills_rec2 from "@/assets/img/myImages/navpills_rec22.png";
+import navpills_rec3 from "@/assets/img/myImages/navpills_rec33.png";
+import navpills_rec4 from "@/assets/img/myImages/navpills_rec4.png";
 
 // 리스트 데이터
 const itemTitle = "신경치료가 필요한 경우";
 const itemList = [
-  { id: 1, title: '1.충치', content: '충치가 심해 신경까지 감염된 경우', },
-  { id: 2, title: '2.치아손상', content: '외상으로 인해 치아가 깨지거나 금이 간 경우', },
-  { id: 3, title: '3.치주질환', content: '치주질환으로 신경이 손상된 경우', },
-  { id: 4, title: '4.치아삭제', content: '보철물을 씌우기 위해 치아삭제를 많이 해야 하는 경우', },
+  { id: 1, title: '1.충치', content: '충치가 심해 신경까지 감염된 경우', img: navpills_rec1 },
+  { id: 2, title: '2.치아손상', content: '외상으로 인해 치아가 깨지거나 금이 간 경우', img: navpills_rec2 },
+  { id: 3, title: '3.치주질환', content: '치주질환으로 신경이 손상된 경우', img: navpills_rec3 },
+  { id: 4, title: '4.치아삭제', content: '보철물을 씌우기 위해 치아삭제를 많이 해야 하는 경우', img: navpills_rec4 },
 ];
 
 // 템플릿 리터럴을 자바스크립트 변수에 할당

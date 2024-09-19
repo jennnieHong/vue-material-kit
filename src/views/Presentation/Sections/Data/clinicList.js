@@ -29,8 +29,10 @@ import imgPopover from "@/assets/img/popovers.jpg";
 import imgModal from "@/assets/img/modals.jpg";
 import imgDropdowns from "@/assets/img/dropdowns.jpg";
 
-import navigation from "@/assets/img/myImages/navigation.jpg"; //네비게이션
-import sinus from "@/assets/img/myImages/sinus.jpg"; //상악동
+import navigation2 from "@/assets/img/myImages/navigation2.jpg"; //네비게이션
+import navigation from "@/assets/img/myImages/navigation.png"; //네비게이션
+import sinus2 from "@/assets/img/myImages/sinus.jpg"; //상악동 D:/workspace/dentalClinic/vue-material-kit/src/assets/img/myImages/sinus.jpg
+import sinus from "@/assets/img/myImages/sinus2.png"; //상악동 D:/workspace/dentalClinic/vue-material-kit/src/assets/img/myImages/sinus.png
 import insurance from "@/assets/img/myImages/insurance.jpg"; //보험
 import consciousSedation from "@/assets/img/myImages/consciousSedation.jpg"; //의식하진정요법
 import cavity from "@/assets/img/myImages/cavity.jpg"; //충치치료

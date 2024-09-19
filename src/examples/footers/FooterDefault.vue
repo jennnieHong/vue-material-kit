@@ -165,12 +165,14 @@ defineProps({
                 사업자등록번호 | 106-64-00616 <br />
                 TEL | 054-933-2875<br />
                 FAX | 054-933-2874<br />
-                <div class="">
-                  <a role="button" class="nav-link d-inline"  href="https://blog.naver.com/onjung_dental" target="_blank">서울온정치과 블로그 </a>| <a class="nav-link d-inline" href="https://www.kagd.org" target="_blank">대한통합치과학회</a><br />
-                </div>
-                
-                
-                <!-- 
+              <div class="">
+                <a role="button" class="nav-link d-inline" href="https://blog.naver.com/onjung_dental"
+                  target="_blank">서울온정치과 블로그 </a>| <a class="nav-link d-inline" href="https://www.kagd.org"
+                  target="_blank">대한통합치과학회</a><br />
+              </div>
+
+
+              <!-- 
                 {{ new Date().getFullYear() }}
                 Material Kit by
               <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>. -->
@@ -194,7 +196,7 @@ defineProps({
             <p class="text-dark my-4 text-sm font-weight-normal">
               All rights reserved. Copyright ©
               {{ new Date().getFullYear() }}
-              <a href="https://www.creative-tim.com" target="_blank">서울온정치과</a>.
+              <a href="http://서울온정치과.com" target="_blank">서울온정치과</a>.
             </p>
           </div>
         </div>

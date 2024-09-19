@@ -22,6 +22,12 @@ import moldapply from '@/assets/img/myImages/moldapply.jpg';
 import cavity from '@/assets/img/myImages/cavity.jpg';
 import gum from '@/assets/img/myImages/gum.jpg'; //잇몸치료
 
+import gum_self1 from "@/assets/img/myImages/gum_self11.png";
+import gum_self2 from "@/assets/img/myImages/gum_self2.png";
+import gum_self3 from "@/assets/img/myImages/gum_self3.png";
+import gum_self4 from "@/assets/img/myImages/gum_self4.png";
+import gum_self5 from "@/assets/img/myImages/gum_self5.png";
+import gum_self6 from "@/assets/img/myImages/gum_self6.png";
 //dep
 import Typed from "typed.js";
 
@@ -40,12 +46,12 @@ import setNavPills from "@/assets/js/nav-pills";
 // 리스트 데이터
 const itemTitle = "잇몸질환 자가진단방법";
 const itemList = [
-  { id: 1, title: '1.출혈', content: '양치질할 때 잇몸에서 피가 나는 경우', },
-  { id: 2, title: '2.통증', content: '잇몸이나 잇몸 주변에 통증이 있는 경우', },
-  { id: 3, title: '3.구취', content: '입에서 구취가 나는 경우', },
-  { id: 4, title: '4.붓기', content: '잇몸이 주기적으로 붓는 경우', },
-  { id: 5, title: '5.흔들림', content: '이가 흔들리거나 사이가 벌어진 경우', },
-  { id: 6, title: '6.고름', content: '잇몸에서 고름이 나오는 경우', },
+  { id: 1, title: '1.출혈', content: '양치질할 때 잇몸에서 피가 나는 경우', img: gum_self1 },
+  { id: 2, title: '2.통증', content: '잇몸이나 잇몸 주변에 통증이 있는 경우', img: gum_self2 },
+  { id: 3, title: '3.구취', content: '입에서 구취가 나는 경우', img: gum_self3 },
+  { id: 4, title: '4.붓기', content: '잇몸이 주기적으로 붓는 경우', img: gum_self4 },
+  { id: 5, title: '5.흔들림', content: '이가 흔들리거나 사이가 벌어진 경우', img: gum_self5 },
+  { id: 6, title: '6.고름', content: '잇몸에서 고름이 나오는 경우', img: gum_self6 },
 ];
 
 // 템플릿 리터럴을 자바스크립트 변수에 할당
@@ -124,7 +130,7 @@ onUnmounted(() => {
     <!-- <Newsletter /> -->
 
     <MyNewsletter :title="title" :content="content" :img=gum></MyNewsletter>
-    <MyView :title="itemTitle" :items="itemList" height="100" :part1Ratio="3"> </MyView>
+    <MyView :title="itemTitle" :items="itemList" height="400" :part1Ratio="3"> </MyView>
   </div>
   <DefaultFooter />
 </template>
