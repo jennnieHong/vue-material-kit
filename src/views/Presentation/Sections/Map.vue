@@ -1,7 +1,8 @@
 <script setup>
 // example component
 import HorizontalTeamCard from "@/examples/cards/teamCards/HorizontalTeamCard.vue";
-import { onMounted, ref } from "vue";
+import { onMounted, ref, getCurrentInstance } from "vue";
+const { proxy } = getCurrentInstance();
 
 // clipboard
 import useClipboard from "vue-clipboard3";
@@ -9,6 +10,7 @@ import View from "../../../layouts/sections/components/View.vue";
 
 //Vue Material Kit 2 components
 import MaterialButton from "./../../../components/MaterialButton.vue";
+import Modal from "../../../components/Modal.vue";
 // import BadgesSimple from "./../components/BadgesSimple.vue";
 // images
 import emma from "@/assets/img/team-5.jpg";
@@ -97,6 +99,10 @@ const initMap = () => {
   var zoomControl = new kakao.maps.ZoomControl();
   map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
+  // 일반 지도와 스카이뷰로 지도 타입을 전환할 수 있는 지도타입 컨트롤을 생성합니다
+  var mapTypeControl = new kakao.maps.MapTypeControl();
+  // 지도 타입 컨트롤을 지도에 표시합니다
+  map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
 
   const addMarkerAndInfo = (map, company) => {
     // 마커 생성
@@ -183,7 +189,8 @@ const handleMakeCall = () => {
     alert("!!")
     return
   }
-  emit('make-call');//부모로 전달
+  // emit('make-call');//부모로 전달
+  proxy.makeCall();//globalMixin 직접사용
 }
 const handleOpenModal = () => {
 
@@ -201,6 +208,22 @@ const openFind = () => {
 const openInfo = () => {
   window.open("https://place.map.kakao.com/639674040", "_blank");
 };
+//lat: 35.91826179961859, lng: 128.29387576487045
+const openRoadView = () => {
+  window.open("https://map.kakao.com/link/roadview/35.91826179961859,128.29387576487045", "_blank");
+};
+
+const kakaoMapReset = () => {
+  console.log('원점으로');
+  // var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+  //   mapOption = {
+  //     center: new kakao.maps.LatLng(35.91826179961859, 128.29387576487045), // 지도의 중심좌표
+  //     level: 3 // 지도의 확대 레벨
+  //   };
+
+  // var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+  initMap();
+}
 onMounted(() => {
   initMap();
 })
@@ -243,10 +266,10 @@ const copy = async (event) => {
     setTimeout(function () {
       alert.style.transform = "translate3d(0px, 0px, 0px)";
       alert.style.setProperty("opacity", "0", "important");
-    }, 2000);
+    }, 800);
     setTimeout(function () {
       el.parentElement.querySelector(".alert").remove();
-    }, 2500);
+    }, 1000);
 
   } catch (e) {
     console.error(e);
@@ -261,91 +284,9 @@ const highlighter = (code) => {
 <template>
 
   <portal to="body" @click.stop>
-    <div class="container ">
+    <div class=" ">
       <div class="row mt-2 flex justify-content-center">
-        <div class="col-sm-3 col-6 ms-8">
-          <!-- Button trigger modal -->
-          <!-- <MaterialButton variant="gradient" color="success" data-bs-toggle="modal" data-bs-target="#exampleModal"
-            @click="() => { emit('open-modal') }"> -->
-          <MaterialButton variant="gradient" color="success" data-bs-toggle="modal" data-bs-target="#exampleModal"
-            @click="handleOpenModal">
-            Launch demo modal
-          </MaterialButton>
-
-          <!-- Modal -->
-          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">
-                    Your modal title
-                  </h5>
-                  <MaterialButton color="none" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-                    @click="() => { emit('close-modal') }">
-                  </MaterialButton>
-                </div>
-                <div class="modal-body">
-                  Society has put up so many boundaries, so many limitations on
-                  what’s right and wrong that it’s almost impossible to get a pure
-                  thought out.
-                  <br /><br />
-                  It’s like a little kid, a little boy, looking at colors, and no
-                  one told him what colors are good, before somebody tells you you
-                  shouldn’t like pink because that’s for girls, or you’d instantly
-                  become a gay two-year-old.
-                </div>
-                <div class="modal-footer justify-content-between">
-                  <MaterialButton variant="gradient" color="dark" data-bs-dismiss="modal">
-                    Close
-                  </MaterialButton>
-                  <MaterialButton variant="gradient" color="success" class="mb-0">
-                    Save changes
-                  </MaterialButton>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-3 col-6 ms-8">
-      <!-- Button trigger modal -->
-      <MaterialButton variant="gradient" color="success" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Launch demo modal
-      </MaterialButton>
-
-      <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">
-                Your modal title
-              </h5>
-              <MaterialButton color="none" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-              </MaterialButton>
-            </div>
-            <div class="modal-body">
-              Society has put up so many boundaries, so many limitations on
-              what’s right and wrong that it’s almost impossible to get a pure
-              thought out.
-              <br /><br />
-              It’s like a little kid, a little boy, looking at colors, and no
-              one told him what colors are good, before somebody tells you you
-              shouldn’t like pink because that’s for girls, or you’d instantly
-              become a gay two-year-old.
-            </div>
-            <div class="modal-footer justify-content-between">
-              <MaterialButton variant="gradient" color="dark" data-bs-dismiss="modal">
-                Close
-              </MaterialButton>
-              <MaterialButton variant="gradient" color="success" class="mb-0">
-                Save changes
-              </MaterialButton>
-            </div>
-          </div>
-        </div>
+        <Modal></Modal>
       </div>
     </div>
 
@@ -386,7 +327,13 @@ const highlighter = (code) => {
             style=" top: 20px; left: 20px; background-color: rgba(255, 255, 255, 0.8); border-radius: 8px;">
             <div class="row">
               <div class="col-md-9">
-                <h6>서울온정치과의원111</h6>
+                <a href="#" @click.prevent="kakaoMapReset" class="text-bold align-middle cursor-pointer text-info">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#5f6368">
+                    <path
+                      d="M480-480q33 0 56.5-23.5T560-560q0-33-23.5-56.5T480-640q-33 0-56.5 23.5T400-560q0 33 23.5 56.5T480-480Zm0 294q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480Z" />
+                  </svg>
+                  서울온정치과의원</a><br />
                 <span>경북 성주군 성주읍 성주로 3289, 더갤럭시빌딩 2층</span>
               </div>
               <div role="button" class="col-md-3" id="infoButton_find">
@@ -398,7 +345,7 @@ const highlighter = (code) => {
                 <a class="text-info">길찾기</a>
               </div>
               <div class="row">
-                <p>전화번호:<a role="button" class=" text-info mt-md-0 m-1">054-933-2875</a> </p>
+                <p>전화번호:<a @click.prevnet="makeCall" role="button" class=" text-info mt-md-0 m-1">054-933-2875</a> </p>
               </div>
             </div>
             <div class="mt-md-0">
@@ -413,60 +360,75 @@ const highlighter = (code) => {
         <!-- Your map content here -->
       </div>
     </section>
-    <div v-if="isMobile" class="container" style="z-index: 2;">
-      <div class="row  my-2">
-        <div class="container">
-          <div class="row g-1 text-center">
-            <div class="col-6 " id="infoButton_find" @click="openFind">
-              <button class="btn w-100" style="background-color: black;">
-                <svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 -960 960 960" width="24px" fill="#fff">
-                  <path
-                    d="M440-80v-200q0-56-17-83t-45-53l57-57q12 11 23 23.5t22 26.5q14-19 28.5-33.5T538-485q38-35 69-81t33-161l-63 63-57-56 160-160 160 160-56 56-64-63q-2 143-44 203.5T592-425q-32 29-52 56.5T520-280v200h-80ZM248-633q-4-20-5.5-44t-2.5-50l-64 63-56-56 160-160 160 160-57 56-63-62q0 21 2 39.5t4 34.5l-78 19Zm86 176q-20-21-38.5-49T263-575l77-19q10 27 23 46t28 34l-57 57Z" />
-                </svg>
-                <div class="row">
-                  <a class="text-white">길찾기</a>
-                </div>
-              </button>
-            </div>
-            <div class="col-6" id="infoButton_map" @click="openMap">
-              <button class="btn w-100" style="background-color: black;">
+    <div v-if="isMobile" class=" mt-4" style="z-index: 2;">
+      <div class="">
+        <div class="row text-center">
+          <div class="col-6 " id="infoButton_find" @click="openFind">
+            <button class="btn w-100" style="background-color: black;">
+              <svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+                <path
+                  d="M440-80v-200q0-56-17-83t-45-53l57-57q12 11 23 23.5t22 26.5q14-19 28.5-33.5T538-485q38-35 69-81t33-161l-63 63-57-56 160-160 160 160-56 56-64-63q-2 143-44 203.5T592-425q-32 29-52 56.5T520-280v200h-80ZM248-633q-4-20-5.5-44t-2.5-50l-64 63-56-56 160-160 160 160-57 56-63-62q0 21 2 39.5t4 34.5l-78 19Zm86 176q-20-21-38.5-49T263-575l77-19q10 27 23 46t28 34l-57 57Z" />
+              </svg>
+              <div class="row">
+                <a class="text-white">길찾기</a>
+              </div>
+            </button>
+          </div>
+          <div class="col-6" id="infoButton_map" @click="openMap">
+            <button class="btn w-100" style="background-color: black;">
 
-                <svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 -960 960 960" width="24px" fill="#fff">
-                  <path
-                    d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z" />
-                </svg>
-                <div class="row">
-                  <a class="text-white">큰지도로</a>
-                </div>
-              </button>
-            </div>
-            <div class="col-6" id="infoButton_info" @click="openInfo">
-              <button class="btn w-100" style="background-color: black;">
+              <svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+                <path
+                  d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z" />
+              </svg>
+              <div class="row">
+                <a class="text-white">큰지도로</a>
+              </div>
+            </button>
+          </div>
+          <div class="col-6" id="infoButton_info" @click="openInfo">
+            <button class="btn w-100" style="background-color: black;">
 
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
-                  <path
-                    d="M480-680q-33 0-56.5-23.5T400-760q0-33 23.5-56.5T480-840q33 0 56.5 23.5T560-760q0 33-23.5 56.5T480-680Zm-60 560v-480h120v480H420Z" />
-                </svg>
-                <div class="row">
-                  <a class="text-white">상세정보</a>
-                </div>
-              </button>
-            </div>
-            <div class="col-6" @click="handleMakeCall">
-              <button class="btn w-100" style="background-color: black;">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
-                  <path
-                    d="M798-120q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z" />
-                </svg>
-                <div class="row">
-                  <a class="text-white">전화걸기</a>
-                </div>
-              </button>
-            </div>
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+                <path
+                  d="M480-680q-33 0-56.5-23.5T400-760q0-33 23.5-56.5T480-840q33 0 56.5 23.5T560-760q0 33-23.5 56.5T480-680Zm-60 560v-480h120v480H420Z" />
+              </svg>
+              <div class="row">
+                <a class="text-white">상세정보</a>
+              </div>
+            </button>
+          </div>
+          <div class="col-6" @click="handleMakeCall">
+            <button class="btn w-100" style="background-color: black;">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+                <path
+                  d="M798-120q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z" />
+              </svg>
+              <div class="row">
+                <a class="text-white">전화걸기</a>
+              </div>
+            </button>
           </div>
         </div>
+      </div>
 
 
+
+    </div>
+    <div class="mt-2" style="z-index: 2;">
+      <div class="row flex justify-content-center">
+        <div class="" id="infoButton_info" @click="openRoadView">
+          <button class="btn w-100" style="background-color: black;">
+
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+              <path
+                d="M480-320q75 0 127.5-52.5T660-500q0-75-52.5-127.5T480-680q-75 0-127.5 52.5T300-500q0 75 52.5 127.5T480-320Zm0-72q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm0 192q-146 0-266-81.5T40-500q54-137 174-218.5T480-800q146 0 266 81.5T920-500q-54 137-174 218.5T480-200Zm0-300Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z" />
+            </svg>
+            <div class="row">
+              <a class="text-white">로드뷰 보러가기</a>
+            </div>
+          </button>
+        </div>
       </div>
     </div>
   </div>

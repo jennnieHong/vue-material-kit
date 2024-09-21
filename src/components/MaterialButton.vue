@@ -1,4 +1,5 @@
 <script setup>
+import { ref } from 'vue';
 defineProps({
   variant: {
     type: String,
@@ -60,12 +61,20 @@ function getClasses(variant, color, size, fullWidth, disabled) {
 
   return `${colorValue} ${sizeValue} ${fullWidthValue} ${activeValue}`;
 }
+
+const emit = defineEmits(['click']);
+const button = ref(null);
+// 클릭 이벤트 핸들러
+const handleClick = () => {
+  emit('click');
+}
+// button에 대한 접근을 부모에게 제공하기 위해 expose
+defineExpose({
+  button
+});
 </script>
 <template>
-  <button
-    class="btn"
-    :class="getClasses(variant, color, size, fullWidth, disabled)"
-  >
+  <button ref="button" @click="handleClick" class="btn" :class="getClasses(variant, color, size, fullWidth, disabled)">
     <slot />
   </button>
 </template>

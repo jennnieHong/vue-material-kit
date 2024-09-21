@@ -1,6 +1,7 @@
 <script setup>
 import { RouterLink } from "vue-router";
-import { ref, watch, onMounted, onBeforeUnmount } from "vue";
+import { ref, watch, onMounted, onBeforeUnmount, getCurrentInstance } from "vue";
+const { proxy } = getCurrentInstance();
 import { useWindowsWidth } from "../../assets/js/useWindowsWidth";
 
 // images
@@ -9,7 +10,7 @@ import downArrow from "@/assets/img/down-arrow.svg";
 import DownArrWhite from "@/assets/img/down-arrow-white.svg";
 import favicon from '@/assets/img/logo.png';
 
-const emit = defineEmits(['make-call']);
+const emit = defineEmits(['make-call', 'open-modal']);
 const props = defineProps({
   action: {
     type: Object,
@@ -29,7 +30,6 @@ const props = defineProps({
     color: String,
     label: String,
     default: () => ({
-      route: "#",
       color: "bg-gradient-warning",
       label: "전화 문의"
     })
@@ -88,8 +88,14 @@ const getTextColor = () => {
 
   return color;
 };
-const handleMakeCall = () => {
-  emit('make-call');
+const handleMakeCall = function () {
+  if (!isMobile.value) { //모바일버전이 아닌 경우 모달로 전화번호 띄우기
+    emit('open-modal')//특정 돔 요소에 영향을 주는 행위에 적합
+    // proxy.openModal();//globalMixin.  
+    return;
+  }
+  // emit('make-call');
+  return proxy.makeCall();//globalMixin 공통 로직이나 데이터 관리의 용도로 적합
 }
 // set nav color on mobile && desktop
 
@@ -178,7 +184,12 @@ onBeforeUnmount(() => {
           <li class="nav-item dropdown dropdown-hover mx-2">
             <a role="button" class="nav-link ps-2 d-flex cursor-pointer align-items-center" :class="getTextColor()"
               id="dropdownMenuPages" data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="material-icons opacity-6 me-2 text-md" :class="getTextColor()">dashboard</i>
+              <!-- <i class="material-icons opacity-6 me-2 text-md" :class="getTextColor()">dashboard</i> -->
+              <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960"
+                class="material-icons opacity-6 me-2 text-md" :fill="getTextColor() == 'text-white' ? '#fff' : '#000'">
+                <path
+                  d="M640-440 474-602q-31-30-52.5-66.5T400-748q0-55 38.5-93.5T532-880q32 0 60 13.5t48 36.5q20-23 48-36.5t60-13.5q55 0 93.5 38.5T880-748q0 43-21 79.5T807-602L640-440Zm0-112 109-107q19-19 35-40.5t16-48.5q0-22-15-37t-37-15q-14 0-26.5 5.5T700-778l-60 72-60-72q-9-11-21.5-16.5T532-800q-22 0-37 15t-15 37q0 27 16 48.5t35 40.5l109 107ZM280-220l278 76 238-74q-5-9-14.5-15.5T760-240H558q-27 0-43-2t-33-8l-93-31 22-78 81 27q17 5 40 8t68 4q0-11-6.5-21T578-354l-234-86h-64v220ZM40-80v-440h304q7 0 14 1.5t13 3.5l235 87q33 12 53.5 42t20.5 66h80q50 0 85 33t35 87v40L560-60l-280-78v58H40Zm80-80h80v-280h-80v280Zm520-546Z" />
+              </svg>
               병원소개
               <img :src="getArrowColor()" alt="down-arrow" class="arrow ms-2 d-lg-block d-none" />
               <img :src="getArrowColor()" alt="down-arrow" class="arrow ms-1 d-lg-none d-block ms-auto" />
@@ -243,7 +254,12 @@ onBeforeUnmount(() => {
           <li class="nav-item dropdown dropdown-hover mx-2">
             <a role="button" class="nav-link ps-2 d-flex cursor-pointer align-items-center" :class="getTextColor()"
               id="dropdownMenuPages" data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="material-icons opacity-6 me-2 text-md" :class="getTextColor()">dashboard</i>
+              <!-- <i class="material-icons opacity-6 me-2 text-md" :class="getTextColor()">dashboard</i> -->
+              <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960"
+                class="material-icons opacity-6 me-2 text-md" :fill="getTextColor() == 'text-white' ? '#fff' : '#000'">
+                <path
+                  d="M159-120v-120h124L181-574q-27-15-44.5-44T119-680q0-50 35-85t85-35q39 0 69.5 22.5T351-720h128v-40q0-17 11.5-28.5T519-800q9 0 17.5 4t14.5 12l68-64q9-9 21.5-11.5T665-856l156 72q12 6 16.5 17.5T837-744q-6 12-17.5 15.5T797-730l-144-66-94 88v56l94 86 144-66q11-5 23-1t17 15q6 12 1 23t-17 17l-156 74q-12 6-24.5 3.5T619-512l-68-64q-6 6-14.5 11t-17.5 5q-17 0-28.5-11.5T479-600v-40H351q-3 8-6.5 15t-9.5 15l200 370h144v120H159Zm80-520q17 0 28.5-11.5T279-680q0-17-11.5-28.5T239-720q-17 0-28.5 11.5T199-680q0 17 11.5 28.5T239-640Zm126 400h78L271-560h-4l98 320Zm78 0Z" />
+              </svg>
               디지털 임플란트
               <img :src="getArrowColor()" alt="down-arrow" class="arrow ms-2 d-lg-block d-none" />
               <img :src="getArrowColor()" alt="down-arrow" class="arrow ms-1 d-lg-none d-block ms-auto" />
@@ -415,7 +431,12 @@ onBeforeUnmount(() => {
           <li class="nav-item dropdown dropdown-hover mx-2">
             <a role="button" class="nav-link ps-2 d-flex cursor-pointer align-items-center" :class="getTextColor()"
               id="dropdownMenuPages" data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="material-icons opacity-6 me-2 text-md" :class="getTextColor()">dashboard</i>
+              <!-- <i class="material-icons opacity-6 me-2 text-md" :class="getTextColor()">dashboard</i> -->
+              <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960"
+                class="material-icons opacity-6 me-2 text-md" :fill="getTextColor() == 'text-white' ? '#fff' : '#000'">
+                <path
+                  d="M680-875q66 0 113 47t47 113q0 11-1.5 29.5T834-643l-55 403q-5 38-34.5 62T677-154q-23 0-42.5-10T602-192L495-348q-2-4-6.5-5.5T479-355q-4 0-16 9L359-195q-14 20-34.5 30.5T281-154q-38 0-67-24.5T180-241l-54-402q-3-24-4.5-42.5T120-715q0-66 47-113t113-47q36 0 57.5 9.5T379-845q20 11 42.5 20.5T480-815q36 0 58.5-9.5T581-845q20-11 42-20.5t57-9.5Zm0 80q-23 0-40.5 9.5T601-765q-21 11-49 20.5t-72 9.5q-44 0-72-9.5T359-765q-21-11-38.5-20.5T280-795q-33 0-56.5 23.5T200-715q0 8 1 23t4 35l55 405q1 8 7 12.5t14 4.5q5 0 9-2t6-6l101-148q14-20 36-32t47-12q25 0 47 12t36 32l103 151q2 3 5 4.5t7 1.5q8 0 14.5-4.5T700-251l55-406q3-20 4-35t1-23q0-33-23.5-56.5T680-795ZM480-515Z" />
+              </svg>
               일반치료
               <img :src="getArrowColor()" alt="down-arrow" class="arrow ms-2 d-lg-block d-none" />
               <img :src="getArrowColor()" alt="down-arrow" class="arrow ms-1 d-lg-none d-block ms-auto" />
@@ -461,7 +482,12 @@ onBeforeUnmount(() => {
           <li class="nav-item dropdown dropdown-hover mx-2">
             <a role="button" class="nav-link ps-2 d-flex cursor-pointer align-items-center" :class="getTextColor()"
               id="dropdownMenuPages" data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="material-icons opacity-6 me-2 text-md" :class="getTextColor()">dashboard</i>
+              <!-- <i class="material-icons opacity-6 me-2 text-md" :class="getTextColor()">dashboard</i> -->
+              <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960"
+                class="material-icons opacity-6 me-2 text-md" :fill="getTextColor() == 'text-white' ? '#fff' : '#000'">
+                <path
+                  d="M480-260q68 0 123.5-38.5T684-400H276q25 63 80.5 101.5T480-260ZM312-520l44-42 42 42 42-42-84-86-86 86 42 42Zm250 0 42-42 44 42 42-42-86-86-84 86 42 42ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-400Zm0 320q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Z" />
+              </svg>
               심미치료
               <img :src="getArrowColor()" alt="down-arrow" class="arrow ms-2 d-lg-block d-none" />
               <img :src="getArrowColor()" alt="down-arrow" class="arrow ms-1 d-lg-none d-block ms-auto" />
@@ -909,18 +935,33 @@ onBeforeUnmount(() => {
             </RouterLink>
           </li>
         </ul>
-        <ul class="navbar-nav d-lg-block d-none">
+        <ul v-if="isMobile" class="navbar-nav d-lg-block d-none">
           <li class="nav-item ">
             <!-- <a :href="action2.route" class="btn btn-sm mb-0 " :class="action2.color"
               onclick="smoothToPricing('pricing-soft-ui')"> -->
 
-            <button @click="handleMakeCall" class="btn btn-sm mb-0 " :class="action2.color">
+            <a role="button" @click.prevent="handleMakeCall" class="btn btn-sm mb-0 " :class="action2.color">
 
               <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" fill="#fff">
                 <path
                   d="M798-120q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z" />
               </svg>
-              {{ action2.label }}</button>
+              {{ action2.label }}</a>
+          </li>
+        </ul>
+        <ul v-if="!isMobile" class="navbar-nav d-lg-block d-none">
+
+          <li class="nav-item ">
+            <!-- <a :href="action2.route" class="btn btn-sm mb-0 " :class="action2.color"
+              onclick="smoothToPricing('pricing-soft-ui')"> -->
+            <a class="btn btn-sm mb-0 " :class="action2.color" variant="gradient" color="success" data-bs-toggle="modal"
+              data-bs-target="#exampleModal" ref="popupButton">
+              <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" fill="#fff">
+                <path
+                  d="M798-120q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z" />
+              </svg>
+              {{ action2.label }}
+            </a>
           </li>
         </ul>
       </div>

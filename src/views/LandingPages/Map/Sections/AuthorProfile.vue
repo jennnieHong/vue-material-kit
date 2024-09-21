@@ -27,6 +27,7 @@ onMounted(() => {
                 alt="Avatar" />
             </div>
 
+            <!-- <Modal>전달합니다</Modal> -->
           </div>
 
           <div class="row py-7">

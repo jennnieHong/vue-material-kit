@@ -27,7 +27,7 @@ import MaterialButton from "@/components/MaterialButton.vue";
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">
-                  Your modal title
+                  Your modal title22222222222111111113333
                 </h5>
                 <MaterialButton
                   color="none"
@@ -37,9 +37,7 @@ import MaterialButton from "@/components/MaterialButton.vue";
                 </MaterialButton>
               </div>
               <div class="modal-body">
-                Society has put up so many boundaries, so many limitations on
-                what’s right and wrong that it’s almost impossible to get a pure
-                thought out.
+                모달내용
                 <br /><br />
                 It’s like a little kid, a little boy, looking at colors, and no
                 one told him what colors are good, before somebody tells you you

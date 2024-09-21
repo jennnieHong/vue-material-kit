@@ -12,9 +12,12 @@ import Contact from "./Sections/AuthorContact.vue";
 
 // image
 import image from "@/assets/img/city-profile.jpg";
+
+
+
 </script>
 <template>
-  <DefaultNavbar />
+  <DefaultNavbar @open-modal="openModal" />
   <Header>
     <div class="page-header min-height-400" :style="{ backgroundImage: `url(${image})` }" loading="lazy">
       <!-- <span class="mask bg-gradient-dark opacity-8"></span> -->

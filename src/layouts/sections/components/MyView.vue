@@ -51,6 +51,8 @@
 </template>
 
 <script setup>
+import { makeCall } from '../../../utils/api';
+
 // import { defineProps, defineEmits } from 'vue';
 
 // Props 정의
@@ -78,11 +80,12 @@ const props = defineProps({
 });
 
 // emit 함수 정의
-const emit = defineEmits(['click']);
+// const emit = defineEmits(['click']);
 // 클릭 핸들러 함수
 function handleClick(event) {
-  console.log('Component clicked:', event);
-  emit('click', event);  // 부모 컴포넌트에 이벤트를 전달
+  // console.log('Component clicked:', event);
+  // emit('click', event);  // 부모 컴포넌트에 이벤트를 전달
+  makeCall();
 }
 // Helper function to determine the content column class
 const getContentColumnClass = () => {
