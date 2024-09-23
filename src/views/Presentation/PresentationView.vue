@@ -47,13 +47,13 @@ const makeCall = () => {
   console.log("makeCall")
   window.location.href = 'tel:054-933-2875'
 }
-const openModal = () => {
-  console.log("openModal!!");
-  if (popupButton.value) {
-    // popupButton.value.click();
-  }
+// const openModal = () => {
+//   console.log("openModal!!~~~~~~");
+//   if (popupButton.value) {
+//     // popupButton.value.click();
+//   }
 
-}
+// }
 const closeModal = () => {
   console.log("closeModal")
 
@@ -84,45 +84,19 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="container position-sticky z-index-sticky top-0">
+  <NavbarDefault :sticky="true" :transparent="true" :darkText="true" @make-call="makeCall" @open-modal="openModal" />
+  <!-- <div class="container position-sticky z-index-sticky top-0">
     <div class="row">
-      <!-- <div class="col"> -->
-      <NavbarDefault :sticky="true" transparent="true" darkText="true" @make-call="makeCall" @open-modal="openModal" />
-
-      <!-- </div> -->
     </div>
-  </div>
+  </div> -->
   <Header>
     <div class="page-header min-vh-75 opacity-7" :style="`background-image: url(${vueMkHeader})`" loading="lazy">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6 text-dark text-left mx-auto position-relative ">
-            <!-- <h1 class="text-white pt-3 mt-n5 me-2" :style="{ display: 'inline-block ' }"> -->
-            <!-- <h1 class="pt-3 mt-n5" :style="{ display: 'inline-block ', marginLeft: '50px' }">
-              서울온정치과
-            </h1> -->
-            <!-- <p class="lead text-white px-5 mt-3" :style="{ fontWeight: '500' }"> -->
-            <p class="lead px-5 mt-3" :style="{ fontWeight: '500' }"><span id="typed"></span>
-
-            <div id="typed-strings">
-              <h1>기쁨을 전달합니다.</h1>
-              <h1>치아에 대한 끊임없는 연구를 합니다.</h1>
-              <h1>수준 높은 진료와 맞춤 서비스를 제공합니다.</h1>
-              <h1>우수한 진료는 서울온정치과</h1>
-            </div>
-            <!-- <br />
-            기쁨을 전달합니다! 우수한 진료는 서울온정치과<br /><br />
-            치아에 대한 끊임없는 연구와 체계적인 진단을 통해<br /> 수준 높은 진료와 맞춤 서비스를 제공하겠습니다. -->
-            </p>
-          </div>
-        </div>
-      </div>
     </div>
   </Header>
 
 
   <!-- Modal -->
-  <Modal code="054-933-2875">054-933-2875</Modal>
+  <!-- <Modal code="054-933-2875">054-933-2875</Modal> -->
   <div class="card card-body blur shadow-blur mx-3 mx-md-4 mt-n6">
     <!-- <PresentationCounter /> -->
     <!-- <PresentationInformation /> -->

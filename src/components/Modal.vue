@@ -26,9 +26,9 @@
                                 d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
                         </svg>닫기
                     </MaterialButton>
-
                     <a class="btn bg-success  z-index-3 text-white " @click="copy($event)" href="javascript:;"><i
                             class="fas fa-copy text-sm me-1"></i>복사</a>
+
                 </div>
             </div>
         </div>

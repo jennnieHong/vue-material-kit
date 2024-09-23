@@ -18,7 +18,7 @@ import william from "@/assets/img/bruce-mars.jpg";
 import ivana from "@/assets/img/ivana-squares.jpg";
 import marquez from "@/assets/img/ivana-square.jpg";
 import imagePath from "@/assets/img/building-view.jpg";
-import faviconPath from "@/assets/img/favicon2.png";
+// import faviconPath from "@/assets/img/favicon2.png";
 
 
 // prop
@@ -108,7 +108,7 @@ const initMap = () => {
     // 마커 생성
     const markerPosition = new kakao.maps.LatLng(35.91826179961859, 128.29387576487045); // 마커가 표시될 위치(위,경)
 
-    const markerImage = new kakao.maps.MarkerImage(faviconPath, new kakao.maps.Size(24, 24));
+    // const markerImage = new kakao.maps.MarkerImage(faviconPath, new kakao.maps.Size(24, 24));
     const marker = new kakao.maps.Marker({
       position: markerPosition,
       // image: markerImage
@@ -283,14 +283,6 @@ const highlighter = (code) => {
 
 <template>
 
-  <portal to="body" @click.stop>
-    <div class=" ">
-      <div class="row mt-2 flex justify-content-center">
-        <Modal></Modal>
-      </div>
-    </div>
-
-  </portal>
   <div class="container">
     <div class="row">
       <div class="row justify-content-center text-center ">
