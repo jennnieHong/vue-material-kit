@@ -35,7 +35,7 @@ onMounted(() => {
                 </div> -->
               </div>
               <div class="d-flex justify-content-between align-items-center mb-2">
-                <h3 class="mb-0">서울온정치과 <br />대표원장 배인재,<br /> 대표원장 이종성입니다.</h3>
+                <h3 class="mb-0">서울온정치과 <br />원장 배인재입니다.</h3>
                 <!-- <div class="d-block">
                   <MaterialButton class="text-nowrap mb-0" variant="outline" color="success" size="sm">Follow
                   </MaterialButton>

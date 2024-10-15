@@ -220,9 +220,9 @@ onBeforeUnmount(() => {
                       <!-- <div class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-0 mt-3">
                         의료진
                       </div> -->
-                      <RouterLink :to="{ name: 'curriculum' }" class="dropdown-item border-radius-md">
+                      <!-- <RouterLink :to="{ name: 'curriculum' }" class="dropdown-item border-radius-md">
                         <span>의료진</span>
-                      </RouterLink>
+                      </RouterLink> -->
                       <RouterLink :to="{ name: 'hours' }" class="dropdown-item border-radius-md">
                         <span>진료시간</span>
                       </RouterLink>

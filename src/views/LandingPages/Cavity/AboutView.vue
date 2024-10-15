@@ -48,7 +48,7 @@ const itemList = [
   { id: 1, title: '1단계-레진', content: '치마의 가장 바깥쪽 법랑질부터 썩기 시작하며 자각 증상이 없어 간단한 레진 치료가 가능합니다.', img: cavity_material1 },
   { id: 2, title: '2단계-인레이', content: '법랑질을 뚫고 상아질까지 충치가 진행되어 시린 증상과 통증이 나타나 범위에 따라 인레이 치료가 필요합니다.', img: cavity_material2 },
   { id: 3, title: '3단계-크라운', content: '혈관이 분포된 치수까지 진행되어 극심한 통증이 발생하며 충치의 범위가 깊고 넓어 신경치료와 크라운 치료가 필요합니다.', img: cavity_material3 },
-  { id: 4, title: '4단계-일플란트', content: '뿌리와 잇몸까지 손상되어 신경조작이 썩어 발치 후 임플란트 수술이 필요합니다.', img: cavity_material4 },
+  { id: 4, title: '4단계-임플란트', content: '뿌리와 잇몸까지 손상되어 신경조작이 썩어 발치 후 임플란트 수술이 필요합니다.', img: cavity_material4 },
 ];
 
 // 템플릿 리터럴을 자바스크립트 변수에 할당
