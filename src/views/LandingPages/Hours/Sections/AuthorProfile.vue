@@ -27,13 +27,8 @@ onMounted(() => {
           </div>
           <div class="row py-7">
             <div class="col-lg-7 col-md-7 z-index-2 position-relative px-md-2 px-sm-5 mx-auto">
-              <h2>진료시간</h2>
+              <!-- <h2>진료시간</h2>
               <div class="d-flex justify-content-between align-items-center mb-2">
-                <!-- <h4 class="mb-0 mt-5">✔ 디지털 치과</h4> -->
-                <!-- <div class="d-block">
-                  <MaterialButton class="text-nowrap mb-0" variant="outline" color="success" size="sm">Follow
-                  </MaterialButton>
-                </div> -->
               </div>
               <p class="text-lg mb-5">
                 <br />월수 오전 9시 ~ 오후 8시 (야간진료)
@@ -43,10 +38,14 @@ onMounted(() => {
                 <br />토요일 점심시간 없이 진료
                 <br />일요일, 공휴일 휴진
 
-                <!-- <br /><a href="javascript:;" class="text-success icon-move-right">More about me
-                  <i class="fas fa-arrow-right text-sm ms-1"></i>
-                </a> -->
-              </p>
+              </p> -->
+
+              <div class="col-md-12 ms-auto mt-6 md-mt-0">
+                <div class="position-relative">
+                  <img class="max-width-50 w-100 position-relative z-index-2" src="@/assets/img/hours.jpg"
+                    alt="월수 오전 9시 ~ 오후 8시 (야간진료)/화목금 오전 9시 ~ 오후 6시 30분/토 오전 9시 ~ 오후 2시/점심시간 오후 1시~ 오후 2시 30분" />
+                </div>
+              </div>
             </div>
           </div>
         </div>

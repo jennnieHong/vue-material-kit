@@ -18,7 +18,7 @@ import william from "@/assets/img/bruce-mars.jpg";
 import ivana from "@/assets/img/ivana-squares.jpg";
 import marquez from "@/assets/img/ivana-square.jpg";
 import imagePath from "@/assets/img/building-view.jpg";
-// import faviconPath from "@/assets/img/favicon2.png";
+import faviconPath from "@/assets/img/favicon2.png";
 
 
 // prop
@@ -108,7 +108,7 @@ const initMap = () => {
     // 마커 생성
     const markerPosition = new kakao.maps.LatLng(35.91826179961859, 128.29387576487045); // 마커가 표시될 위치(위,경)
 
-    // const markerImage = new kakao.maps.MarkerImage(faviconPath, new kakao.maps.Size(24, 24));
+    const markerImage = new kakao.maps.MarkerImage(faviconPath, new kakao.maps.Size(24, 24));
     const marker = new kakao.maps.Marker({
       position: markerPosition,
       // image: markerImage
@@ -193,10 +193,8 @@ const handleMakeCall = () => {
   proxy.makeCall();//globalMixin 직접사용
 }
 const handleOpenModal = () => {
-
-  console.log("handleOpenModal from Map 부모로 전달")
-  emit('oepn-modal');//부모로 전달
-  console.log("handleOpenModal from Map 부모로 전달")
+  // emit('oepn-modal');//부모로 전달
+  proxy.openPopup();
 }
 
 const openMap = () => {
@@ -283,13 +281,27 @@ const highlighter = (code) => {
 
 <template>
 
+  <portal to="body" @click.stop>
+    <div class=" ">
+      <div class="row mt-2 flex justify-content-center">
+        <Modal></Modal>
+      </div>
+    </div>
+
+  </portal>
   <div class="container">
     <div class="row">
-      <div class="row justify-content-center text-center ">
+      <div class="row justify-content-center ">
         <div class="col-lg-12 tab-content tab-space">
-          <!-- <MaterialBadge color="success" class="mb-3">진료과목</MaterialBadge> -->
 
-          <h2 class="text-dark">찾아오시는 길</h2>
+          <h2 class="text-dark  text-center">찾아오시는 길</h2>
+
+          <div class="col-md-12 ms-auto mt-6 md-mt-0">
+            <div class="position-relative">
+              <img class="max-width-50 w-100 position-relative z-index-2" src="@/assets/img/map.png"
+                alt="월수 오전 9시 ~ 오후 8시 (야간진료)/화목금 오전 9시 ~ 오후 6시 30분/토 오전 9시 ~ 오후 2시/점심시간 오후 1시~ 오후 2시 30분" />
+            </div>
+          </div>
           <div v-if="isMobile">
 
             <p class="text-dark opacity-8 mb-0 mt-3">
@@ -300,16 +312,52 @@ const highlighter = (code) => {
                 class="fas fa-copy text-sm me-1"></i> 주소복사</a>
 
           </div>
+
+
+          <!-- <Map code="경북 성주군 성주읍 성주로 3289" @make-call="makeCall" /> -->
+          <div class="col-lg-7 col-md-7 z-index-2 position-relative px-md-2 px-sm-5 mx-auto">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <!-- <div class="d-block">
+                  <MaterialButton class="text-nowrap mb-0" variant="outline" color="success" size="sm">Follow
+                  </MaterialButton>
+                </div> -->
+            </div>
+            <p class="text-lg mb-0  text-center">
+              경북 성주군 성주읍 성주로 3289, 더갤럭시빌딩 2층 <br />
+              성주군 종합사회복지관, 성주국민체육센터 부근<br /><br />
+            </p>
+            <p class="text-lg mb-0">
+
+              ✔ 버스이용안내<br />
+              [성산5리 공용주차장 정류장]<br />
+              0 (성주-문방-명광공단-성주)<br />
+              0 (성주-선남-문방-선원-도흥-용신-성주)<br />
+              0 (성주-선남-선원-도흥용신선남-성주)<br />
+              0 (중거-용암-선남-성주)<br />
+              1 (성주-전통시장입구-종합사회복지관-성주)<br />
+              3(성주-놀벤져스-종합사회복지관-성산동고분군-성주)<br />
+              4 (성주-성산동고분군 종합사회복지관-성주)<br />
+              250 (성주-대구북부 문양역-성주)<br />
+              250 (성주-대구북부-성주)<br /><br />
+              ✔ 주차안내<br />
+              [네비게이션 주소]<br />
+              경상북도 성주군 성주읍 성주로 3289<br />
+              서울온정치과 건물 주차장, 성산리 공용주차장을 이용해주세요.<br />
+
+
+              <!-- <br /><a href="#" class="text-success icon-move-right">More about me
+                  <i class="fas fa-arrow-right text-sm ms-1"></i>
+                </a> -->
+            </p>
+          </div>
         </div>
 
 
-        <!-- <View title="gggs Simple" :code="badgesSimpleCode" id="badges-simple">
-          <BadgesSimple />
-        </View> -->
       </div>
     </div>
   </div>
-  <div class="container">
+  <!-- <h2 class="text-dark text-center mt-6">지도</h2> -->
+  <div class="container mt-6">
     <section class=" position-relative bg-gradient-light mx-n3 height-400">
       <!-- 링크 버튼을 넣을 배경 -->
       <div class=" position-relative" style="z-index: 2;">
