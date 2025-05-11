@@ -44,7 +44,7 @@ const itemList = [
   { id: 2, title: '앞니', content: '앞니가 돌출된 경우 및 윗니가 아랫니를 심하게 덮는 경우', },
   { id: 3, title: '아랫니', content: '아랫니가 윗니를 덮는 경우', },
   { id: 4, title: '부정교합', content: '위아래 치아의 교합이 맞지않아 정상적인 저작이 어려운 경우', },
-  { id: 5, title: '영구치공간', content: '영구치가 날 공간이 부족한 경우', },
+  { id: 5, title: '영구치공간', content: '영구치가 나올 공간이 부족한 경우', },
   { id: 6, title: '여백', content: '치아 사이가 벌어진 경우', },
   { id: 7, title: '유치', content: '유치가 제 시기에 빠지지 않은 경우', },
   { id: 8, title: '소리', content: '입을 벌릴 때 턱에서 소리가 나거나 통증이 있는 경우', },

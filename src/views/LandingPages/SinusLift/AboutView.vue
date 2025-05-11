@@ -129,7 +129,7 @@ onUnmounted(() => {
     <!-- <Featuring /> -->
     <!-- <Newsletter /> -->
 
-    <MyNewsletter title="상악동이란?" content="광데에서 윗턱뼈꺼지 이어진 부분의 빈 공간" :img=sinus></MyNewsletter>
+    <MyNewsletter title="상악동이란?" content="광대에서 윗턱뼈꺼지 이어진 부분의 빈 공간" :img=sinus></MyNewsletter>
     <MyNewsletter :title="title" :content="content" :img=sinusInvolvement></MyNewsletter>
     <MyView title="치료 추천 대상" :items="itemList" height="400">
     </MyView>

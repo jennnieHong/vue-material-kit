@@ -246,9 +246,9 @@ onBeforeUnmount(() => {
                 <RouterLink :to="{ name: 'values' }" class="dropdown-item border-radius-md">
                   <span>서울온정치과의 진료철학</span>
                 </RouterLink>
-                <RouterLink :to="{ name: 'curriculum' }" class="dropdown-item border-radius-md">
+                <!-- <RouterLink :to="{ name: 'curriculum' }" class="dropdown-item border-radius-md">
                   <span>의료진</span>
-                </RouterLink>
+                </RouterLink> -->
                 <RouterLink :to="{ name: 'hours' }" class="dropdown-item border-radius-md">
                   <span>진료시간</span>
                 </RouterLink>

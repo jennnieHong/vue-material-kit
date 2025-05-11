@@ -41,7 +41,7 @@ const itemList = [
   { id: 2, title: '몇 개까지?', content: '1인당 평생 2개까지', },
   { id: 3, title: '어디에? ', content: '어금니/앞니 모두', },
   { id: 4, title: '어떤 경우에? ', content: '치아가 1개라도 남아있다면', },
-  { id: 5, title: '보철재료는? ', content: 'PFM만 보험 적용 가능', },
+  { id: 5, title: '보철재료는? ', content: 'PFM과 지르코니아 중 선택 가능', },
   { id: 6, title: '사후 케어는? ', content: '임플란트 후 3개월 이내 사후 점검 시 진찰료만 산정', },
 ];
 
