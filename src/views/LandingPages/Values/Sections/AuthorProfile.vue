@@ -64,7 +64,7 @@ onMounted(() => {
                 </div> -->
               </div>
               <p class="text-lg mb-0">
-                대학병원 소독과 위생 수준에 준하여 진료를 준비하고 있습니다.
+                의료기관 최고 수준의 소독과 위생 관리로 진료를 준비하고 있습니다.
 
                 <!-- <br /><a href="javascript:;" class="text-success icon-move-right">More about me
                   <i class="fas fa-arrow-right text-sm ms-1"></i>

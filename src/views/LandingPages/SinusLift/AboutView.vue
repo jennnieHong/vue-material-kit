@@ -56,7 +56,7 @@ const itemList = [
 const title = "상악동 거상술이란?";
 const content = `상악동은 얼굴 뼈의 빈 공간을 말하는데 
 상악동막을 위로 올려 빈 공간에 뼈를 이식하여
-임플 란트 식립을 위한 공간을 확보하고,
+임플란트 식립을 위한 공간을 확보하고,
 위턱의 안정적인 식립을 도와주는 시술입니다.`;
 
 //hooks
@@ -129,7 +129,7 @@ onUnmounted(() => {
     <!-- <Featuring /> -->
     <!-- <Newsletter /> -->
 
-    <MyNewsletter title="상악동이란?" content="광대에서 윗턱뼈꺼지 이어진 부분의 빈 공간" :img=sinus></MyNewsletter>
+    <MyNewsletter title="상악동이란?" content="광대에서 윗턱뼈까지 이어진 부분의 빈 공간" :img=sinus></MyNewsletter>
     <MyNewsletter :title="title" :content="content" :img=sinusInvolvement></MyNewsletter>
     <MyView title="치료 추천 대상" :items="itemList" height="400">
     </MyView>

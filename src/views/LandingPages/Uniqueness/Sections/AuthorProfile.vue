@@ -57,14 +57,14 @@ onMounted(() => {
                 </a> -->
               </p>
               <div class="d-flex justify-content-between align-items-center mb-2">
-                <h4 class="mb-0">✔ 대학병원수준의 진료</h4>
+                <h4 class="mb-0">✔ 최고 수준의 진료 시스템</h4>
                 <!-- <div class="d-block">
                   <MaterialButton class="text-nowrap mb-0" variant="outline" color="success" size="sm">Follow
                   </MaterialButton>
                 </div> -->
               </div>
               <p class="text-lg mb-5">
-                전문성을 바탕으로 치과대학병원과 동일한 진료 품질과 시스템을 갖추고 있습니다.<br />
+                풍부한 임상 경험과 전문성을 바탕으로 최고 수준의 진료 품질과 시스템을 갖추고 있습니다.<br />
 
                 <!-- <br /><a href="javascript:;" class="text-success icon-move-right">More about me
                   <i class="fas fa-arrow-right text-sm ms-1"></i>
